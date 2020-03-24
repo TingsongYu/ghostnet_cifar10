@@ -73,5 +73,11 @@ ghost-vgg16的第二个卷积部分的primary和cheap的卷积特征图如下
 ![](https://github.com/TingsongYu/ghostnet_cifar10/blob/master/data/ghost-vgg-16_fmap.png)
 
 
-对Ghost module改进有任何想法的欢迎发邮件一起讨论：yts3221@126.com ，或到博客/知乎中评论 
+对Ghost module改进有任何想法的欢迎发邮件一起讨论：yts3221@126.com ，或到博客/知乎中评论   
+
+参考：
+ghost部分：https://github.com/huawei-noah/ghostnet   
+vgg部分：https://github.com/kuangliu/pytorch-cifar   
+resnet部分： https://github.com/akamaster/pytorch_resnet_cifar10   
+
 
