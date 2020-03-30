@@ -14,7 +14,11 @@
 本项目对 GhostNet: More Features from Cheap Operations中部分实验进行实践，主要包含三部分内容：
 1. 4个模型训练，vgg16， ghost-vgg16， resnet56， ghost-resnet56
 2. 参数量计算
-3. 特征图可视化
+3. 特征图可视化  
+
+**更详细解读及实验步骤参见：  
+知乎：[GhostNet 解读及代码实验（附代码、超参、日志和与训练模型）](https://zhuanlan.zhihu.com/p/115844245)     
+CSDN：[GhostNet 解读及代码实验（附代码、超参和训练日志）](https://blog.csdn.net/u011995719/article/details/105207344)**
 
 # 依赖
 Python 3.0+  
@@ -42,8 +46,9 @@ http://www.cs.toronto.edu/~kriz/cifar.html 下载python版，得到cifar-10-pyth
 |vgg-16 |93.5% |93.6%|
 |ghost-vgg-16|92.0% | 93.7%|
 
-##预训练模型
-[ghost-resnet-56 and resnet-56](https://pan.baidu.com/s/10e7CWdHxC18-0pwIr-vXHQ) 密码:uz6f 
+## 预训练模型
+[ghost-resnet-56 and resnet-56](https://pan.baidu.com/s/10e7CWdHxC18-0pwIr-vXHQ) 密码:uz6f   
+
 [ghost-vgg-16 and vgg-16](https://pan.baidu.com/s/1pnc_Ir5ZwGeSpn9AAx6eZQ) 密码:n82n
 
 ## 参数计算
