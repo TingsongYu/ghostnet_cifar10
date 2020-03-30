@@ -1,0 +1,1768 @@
+nohup: ignoring input
+PID:10640
+set gpu list :1,0
+
+device_count: 2
+repalce all conv layer to ghost module
+('model architecture: ', VGG(
+  (features): Sequential(
+    (0): GhostModule(
+      (primary_conv): Sequential(
+        (0): Conv2d(3, 32, kernel_size=(3, 3), stride=(1, 1), padding=(1, 1), bias=False)
+        (1): BatchNorm2d(32, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+        (2): ReLU(inplace)
+      )
+      (cheap_operation): Sequential(
+        (0): Conv2d(32, 32, kernel_size=(3, 3), stride=(1, 1), padding=(1, 1), groups=32, bias=False)
+        (1): BatchNorm2d(32, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+        (2): ReLU(inplace)
+      )
+    )
+    (1): BatchNorm2d(64, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+    (2): ReLU(inplace)
+    (3): GhostModule(
+      (primary_conv): Sequential(
+        (0): Conv2d(64, 32, kernel_size=(3, 3), stride=(1, 1), padding=(1, 1), bias=False)
+        (1): BatchNorm2d(32, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+        (2): ReLU(inplace)
+      )
+      (cheap_operation): Sequential(
+        (0): Conv2d(32, 32, kernel_size=(3, 3), stride=(1, 1), padding=(1, 1), groups=32, bias=False)
+        (1): BatchNorm2d(32, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+        (2): ReLU(inplace)
+      )
+    )
+    (4): BatchNorm2d(64, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+    (5): ReLU(inplace)
+    (6): MaxPool2d(kernel_size=2, stride=2, padding=0, dilation=1, ceil_mode=False)
+    (7): GhostModule(
+      (primary_conv): Sequential(
+        (0): Conv2d(64, 64, kernel_size=(3, 3), stride=(1, 1), padding=(1, 1), bias=False)
+        (1): BatchNorm2d(64, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+        (2): ReLU(inplace)
+      )
+      (cheap_operation): Sequential(
+        (0): Conv2d(64, 64, kernel_size=(3, 3), stride=(1, 1), padding=(1, 1), groups=64, bias=False)
+        (1): BatchNorm2d(64, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+        (2): ReLU(inplace)
+      )
+    )
+    (8): BatchNorm2d(128, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+    (9): ReLU(inplace)
+    (10): GhostModule(
+      (primary_conv): Sequential(
+        (0): Conv2d(128, 64, kernel_size=(3, 3), stride=(1, 1), padding=(1, 1), bias=False)
+        (1): BatchNorm2d(64, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+        (2): ReLU(inplace)
+      )
+      (cheap_operation): Sequential(
+        (0): Conv2d(64, 64, kernel_size=(3, 3), stride=(1, 1), padding=(1, 1), groups=64, bias=False)
+        (1): BatchNorm2d(64, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+        (2): ReLU(inplace)
+      )
+    )
+    (11): BatchNorm2d(128, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+    (12): ReLU(inplace)
+    (13): MaxPool2d(kernel_size=2, stride=2, padding=0, dilation=1, ceil_mode=False)
+    (14): GhostModule(
+      (primary_conv): Sequential(
+        (0): Conv2d(128, 128, kernel_size=(3, 3), stride=(1, 1), padding=(1, 1), bias=False)
+        (1): BatchNorm2d(128, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+        (2): ReLU(inplace)
+      )
+      (cheap_operation): Sequential(
+        (0): Conv2d(128, 128, kernel_size=(3, 3), stride=(1, 1), padding=(1, 1), groups=128, bias=False)
+        (1): BatchNorm2d(128, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+        (2): ReLU(inplace)
+      )
+    )
+    (15): BatchNorm2d(256, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+    (16): ReLU(inplace)
+    (17): GhostModule(
+      (primary_conv): Sequential(
+        (0): Conv2d(256, 128, kernel_size=(3, 3), stride=(1, 1), padding=(1, 1), bias=False)
+        (1): BatchNorm2d(128, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+        (2): ReLU(inplace)
+      )
+      (cheap_operation): Sequential(
+        (0): Conv2d(128, 128, kernel_size=(3, 3), stride=(1, 1), padding=(1, 1), groups=128, bias=False)
+        (1): BatchNorm2d(128, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+        (2): ReLU(inplace)
+      )
+    )
+    (18): BatchNorm2d(256, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+    (19): ReLU(inplace)
+    (20): GhostModule(
+      (primary_conv): Sequential(
+        (0): Conv2d(256, 128, kernel_size=(3, 3), stride=(1, 1), padding=(1, 1), bias=False)
+        (1): BatchNorm2d(128, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+        (2): ReLU(inplace)
+      )
+      (cheap_operation): Sequential(
+        (0): Conv2d(128, 128, kernel_size=(3, 3), stride=(1, 1), padding=(1, 1), groups=128, bias=False)
+        (1): BatchNorm2d(128, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+        (2): ReLU(inplace)
+      )
+    )
+    (21): BatchNorm2d(256, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+    (22): ReLU(inplace)
+    (23): MaxPool2d(kernel_size=2, stride=2, padding=0, dilation=1, ceil_mode=False)
+    (24): GhostModule(
+      (primary_conv): Sequential(
+        (0): Conv2d(256, 256, kernel_size=(3, 3), stride=(1, 1), padding=(1, 1), bias=False)
+        (1): BatchNorm2d(256, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+        (2): ReLU(inplace)
+      )
+      (cheap_operation): Sequential(
+        (0): Conv2d(256, 256, kernel_size=(3, 3), stride=(1, 1), padding=(1, 1), groups=256, bias=False)
+        (1): BatchNorm2d(256, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+        (2): ReLU(inplace)
+      )
+    )
+    (25): BatchNorm2d(512, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+    (26): ReLU(inplace)
+    (27): GhostModule(
+      (primary_conv): Sequential(
+        (0): Conv2d(512, 256, kernel_size=(3, 3), stride=(1, 1), padding=(1, 1), bias=False)
+        (1): BatchNorm2d(256, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+        (2): ReLU(inplace)
+      )
+      (cheap_operation): Sequential(
+        (0): Conv2d(256, 256, kernel_size=(3, 3), stride=(1, 1), padding=(1, 1), groups=256, bias=False)
+        (1): BatchNorm2d(256, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+        (2): ReLU(inplace)
+      )
+    )
+    (28): BatchNorm2d(512, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+    (29): ReLU(inplace)
+    (30): GhostModule(
+      (primary_conv): Sequential(
+        (0): Conv2d(512, 256, kernel_size=(3, 3), stride=(1, 1), padding=(1, 1), bias=False)
+        (1): BatchNorm2d(256, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+        (2): ReLU(inplace)
+      )
+      (cheap_operation): Sequential(
+        (0): Conv2d(256, 256, kernel_size=(3, 3), stride=(1, 1), padding=(1, 1), groups=256, bias=False)
+        (1): BatchNorm2d(256, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+        (2): ReLU(inplace)
+      )
+    )
+    (31): BatchNorm2d(512, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+    (32): ReLU(inplace)
+    (33): MaxPool2d(kernel_size=2, stride=2, padding=0, dilation=1, ceil_mode=False)
+    (34): GhostModule(
+      (primary_conv): Sequential(
+        (0): Conv2d(512, 256, kernel_size=(3, 3), stride=(1, 1), padding=(1, 1), bias=False)
+        (1): BatchNorm2d(256, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+        (2): ReLU(inplace)
+      )
+      (cheap_operation): Sequential(
+        (0): Conv2d(256, 256, kernel_size=(3, 3), stride=(1, 1), padding=(1, 1), groups=256, bias=False)
+        (1): BatchNorm2d(256, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+        (2): ReLU(inplace)
+      )
+    )
+    (35): BatchNorm2d(512, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+    (36): ReLU(inplace)
+    (37): GhostModule(
+      (primary_conv): Sequential(
+        (0): Conv2d(512, 256, kernel_size=(3, 3), stride=(1, 1), padding=(1, 1), bias=False)
+        (1): BatchNorm2d(256, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+        (2): ReLU(inplace)
+      )
+      (cheap_operation): Sequential(
+        (0): Conv2d(256, 256, kernel_size=(3, 3), stride=(1, 1), padding=(1, 1), groups=256, bias=False)
+        (1): BatchNorm2d(256, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+        (2): ReLU(inplace)
+      )
+    )
+    (38): BatchNorm2d(512, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+    (39): ReLU(inplace)
+    (40): GhostModule(
+      (primary_conv): Sequential(
+        (0): Conv2d(512, 256, kernel_size=(3, 3), stride=(1, 1), padding=(1, 1), bias=False)
+        (1): BatchNorm2d(256, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+        (2): ReLU(inplace)
+      )
+      (cheap_operation): Sequential(
+        (0): Conv2d(256, 256, kernel_size=(3, 3), stride=(1, 1), padding=(1, 1), groups=256, bias=False)
+        (1): BatchNorm2d(256, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+        (2): ReLU(inplace)
+      )
+    )
+    (41): BatchNorm2d(512, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+    (42): ReLU(inplace)
+    (43): MaxPool2d(kernel_size=2, stride=2, padding=0, dilation=1, ceil_mode=False)
+    (44): AvgPool2d(kernel_size=1, stride=1, padding=0)
+  )
+  (classifier): Linear(in_features=512, out_features=10, bias=True)
+))
+args:
+Namespace(arc='vgg16', bs=128, frozen_primary=False, gpu=[1, 0], low_lr=False, lr=0.1, max_epoch=190, point_conv=False, pretrain=False, replace_conv=True, start_epoch=0)
+ cfg:
+{'cls_names': ['plane', 'car', 'bird', 'cat', 'deer', 'dog', 'frog', 'horse', 'ship', 'truck'], 'milestones': [92, 136], 'valid_bs': 128, 'transforms_valid': Compose(
+    Resize(size=(32, 32), interpolation=PIL.Image.BILINEAR)
+    ToTensor()
+    Normalize(mean=[0.4914, 0.4822, 0.4465], std=[0.2023, 0.1994, 0.201])
+), 'workers': 8, 'log_interval': 50, 'patience': 20, 'transforms_train': Compose(
+    Resize(size=32, interpolation=PIL.Image.BILINEAR)
+    RandomHorizontalFlip(p=0.5)
+    RandomCrop(size=(32, 32), padding=4)
+    ToTensor()
+    Normalize(mean=[0.4914, 0.4822, 0.4465], std=[0.2023, 0.1994, 0.201])
+), 'factor': 0.1, 'class_num': 10, 'train_bs': 128, 'weight_decay': 0.0001, 'momentum': 0.9}
+ loss_f:
+CrossEntropyLoss()
+ scheduler:
+<torch.optim.lr_scheduler.MultiStepLR object at 0x7f8f2b1cd290>
+ optimizer:
+SGD (
+Parameter Group 0
+    dampening: 0
+    initial_lr: 0.1
+    lr: 0.1
+    momentum: 0.9
+    nesterov: False
+    weight_decay: 0.0001
+)
+Training: Epoch[001/190] Iteration[050/391] Loss: 3.7613 Acc:10.53%
+Training: Epoch[001/190] Iteration[100/391] Loss: 3.0587 Acc:11.71%
+Training: Epoch[001/190] Iteration[150/391] Loss: 2.7917 Acc:12.94%
+Training: Epoch[001/190] Iteration[200/391] Loss: 2.6372 Acc:13.97%
+Training: Epoch[001/190] Iteration[250/391] Loss: 2.5262 Acc:15.02%
+Training: Epoch[001/190] Iteration[300/391] Loss: 2.4359 Acc:16.33%
+Training: Epoch[001/190] Iteration[350/391] Loss: 2.3642 Acc:17.46%
+Epoch[001/190] Train Acc: 18.43% Valid Acc:25.04% Train loss:2.3153 Valid loss:75177898646407.1406 LR:0.1
+Training: Epoch[002/190] Iteration[050/391] Loss: 1.8637 Acc:27.14%
+Training: Epoch[002/190] Iteration[100/391] Loss: 1.8573 Acc:27.74%
+Training: Epoch[002/190] Iteration[150/391] Loss: 1.8458 Acc:28.16%
+Training: Epoch[002/190] Iteration[200/391] Loss: 1.8281 Acc:28.80%
+Training: Epoch[002/190] Iteration[250/391] Loss: 1.8137 Acc:29.49%
+Training: Epoch[002/190] Iteration[300/391] Loss: 1.8029 Acc:29.94%
+Training: Epoch[002/190] Iteration[350/391] Loss: 1.7923 Acc:30.37%
+Epoch[002/190] Train Acc: 30.72% Valid Acc:34.95% Train loss:1.7830 Valid loss:9543.6341 LR:0.1
+Training: Epoch[003/190] Iteration[050/391] Loss: 1.6895 Acc:35.33%
+Training: Epoch[003/190] Iteration[100/391] Loss: 1.6730 Acc:35.55%
+Training: Epoch[003/190] Iteration[150/391] Loss: 1.6609 Acc:35.68%
+Training: Epoch[003/190] Iteration[200/391] Loss: 1.6541 Acc:36.04%
+Training: Epoch[003/190] Iteration[250/391] Loss: 1.6446 Acc:36.52%
+Training: Epoch[003/190] Iteration[300/391] Loss: 1.6385 Acc:36.88%
+Training: Epoch[003/190] Iteration[350/391] Loss: 1.6298 Acc:37.32%
+Epoch[003/190] Train Acc: 37.62% Valid Acc:41.30% Train loss:1.6224 Valid loss:114.8334 LR:0.1
+Training: Epoch[004/190] Iteration[050/391] Loss: 1.5515 Acc:40.77%
+Training: Epoch[004/190] Iteration[100/391] Loss: 1.5416 Acc:41.05%
+Training: Epoch[004/190] Iteration[150/391] Loss: 1.5297 Acc:41.69%
+Training: Epoch[004/190] Iteration[200/391] Loss: 1.5166 Acc:42.28%
+Training: Epoch[004/190] Iteration[250/391] Loss: 1.5082 Acc:42.82%
+Training: Epoch[004/190] Iteration[300/391] Loss: 1.5002 Acc:43.23%
+Training: Epoch[004/190] Iteration[350/391] Loss: 1.4901 Acc:43.76%
+Epoch[004/190] Train Acc: 44.13% Valid Acc:50.74% Train loss:1.4821 Valid loss:1.3371 LR:0.1
+Training: Epoch[005/190] Iteration[050/391] Loss: 1.3677 Acc:49.61%
+Training: Epoch[005/190] Iteration[100/391] Loss: 1.3884 Acc:49.35%
+Training: Epoch[005/190] Iteration[150/391] Loss: 1.3691 Acc:50.40%
+Training: Epoch[005/190] Iteration[200/391] Loss: 1.3623 Acc:50.57%
+Training: Epoch[005/190] Iteration[250/391] Loss: 1.3502 Acc:51.08%
+Training: Epoch[005/190] Iteration[300/391] Loss: 1.3363 Acc:51.72%
+Training: Epoch[005/190] Iteration[350/391] Loss: 1.3327 Acc:51.95%
+Epoch[005/190] Train Acc: 52.38% Valid Acc:56.07% Train loss:1.3252 Valid loss:1.2034 LR:0.1
+Training: Epoch[006/190] Iteration[050/391] Loss: 1.2283 Acc:56.02%
+Training: Epoch[006/190] Iteration[100/391] Loss: 1.2261 Acc:56.20%
+Training: Epoch[006/190] Iteration[150/391] Loss: 1.2175 Acc:56.70%
+Training: Epoch[006/190] Iteration[200/391] Loss: 1.2130 Acc:56.85%
+Training: Epoch[006/190] Iteration[250/391] Loss: 1.2030 Acc:57.21%
+Training: Epoch[006/190] Iteration[300/391] Loss: 1.1904 Acc:57.65%
+Training: Epoch[006/190] Iteration[350/391] Loss: 1.1793 Acc:58.08%
+Epoch[006/190] Train Acc: 58.38% Valid Acc:61.80% Train loss:1.1710 Valid loss:1.0526 LR:0.1
+Training: Epoch[007/190] Iteration[050/391] Loss: 1.0664 Acc:62.03%
+Training: Epoch[007/190] Iteration[100/391] Loss: 1.0675 Acc:61.91%
+Training: Epoch[007/190] Iteration[150/391] Loss: 1.0655 Acc:62.18%
+Training: Epoch[007/190] Iteration[200/391] Loss: 1.0660 Acc:62.06%
+Training: Epoch[007/190] Iteration[250/391] Loss: 1.0578 Acc:62.44%
+Training: Epoch[007/190] Iteration[300/391] Loss: 1.0532 Acc:62.59%
+Training: Epoch[007/190] Iteration[350/391] Loss: 1.0502 Acc:62.80%
+Epoch[007/190] Train Acc: 63.02% Valid Acc:63.40% Train loss:1.0436 Valid loss:5667085724.5520 LR:0.1
+Training: Epoch[008/190] Iteration[050/391] Loss: 0.9695 Acc:65.69%
+Training: Epoch[008/190] Iteration[100/391] Loss: 0.9679 Acc:65.90%
+Training: Epoch[008/190] Iteration[150/391] Loss: 0.9720 Acc:65.84%
+Training: Epoch[008/190] Iteration[200/391] Loss: 0.9701 Acc:66.00%
+Training: Epoch[008/190] Iteration[250/391] Loss: 0.9661 Acc:66.07%
+Training: Epoch[008/190] Iteration[300/391] Loss: 0.9596 Acc:66.36%
+Training: Epoch[008/190] Iteration[350/391] Loss: 0.9526 Acc:66.69%
+Epoch[008/190] Train Acc: 66.70% Valid Acc:66.07% Train loss:0.9521 Valid loss:101379509214255840.0000 LR:0.1
+Training: Epoch[009/190] Iteration[050/391] Loss: 0.9021 Acc:68.61%
+Training: Epoch[009/190] Iteration[100/391] Loss: 0.8930 Acc:69.18%
+Training: Epoch[009/190] Iteration[150/391] Loss: 0.8893 Acc:69.01%
+Training: Epoch[009/190] Iteration[200/391] Loss: 0.8822 Acc:69.18%
+Training: Epoch[009/190] Iteration[250/391] Loss: 0.8845 Acc:69.09%
+Training: Epoch[009/190] Iteration[300/391] Loss: 0.8788 Acc:69.28%
+Training: Epoch[009/190] Iteration[350/391] Loss: 0.8776 Acc:69.35%
+Epoch[009/190] Train Acc: 69.33% Valid Acc:71.05% Train loss:0.8767 Valid loss:0.8221 LR:0.1
+Training: Epoch[010/190] Iteration[050/391] Loss: 0.8369 Acc:71.03%
+Training: Epoch[010/190] Iteration[100/391] Loss: 0.8214 Acc:71.38%
+Training: Epoch[010/190] Iteration[150/391] Loss: 0.8147 Acc:71.46%
+Training: Epoch[010/190] Iteration[200/391] Loss: 0.8158 Acc:71.46%
+Training: Epoch[010/190] Iteration[250/391] Loss: 0.8124 Acc:71.68%
+Training: Epoch[010/190] Iteration[300/391] Loss: 0.8108 Acc:71.90%
+Training: Epoch[010/190] Iteration[350/391] Loss: 0.8056 Acc:72.04%
+Epoch[010/190] Train Acc: 72.19% Valid Acc:73.55% Train loss:0.8026 Valid loss:0.7832 LR:0.1
+Training: Epoch[011/190] Iteration[050/391] Loss: 0.7388 Acc:73.86%
+Training: Epoch[011/190] Iteration[100/391] Loss: 0.7522 Acc:73.52%
+Training: Epoch[011/190] Iteration[150/391] Loss: 0.7536 Acc:73.68%
+Training: Epoch[011/190] Iteration[200/391] Loss: 0.7475 Acc:74.07%
+Training: Epoch[011/190] Iteration[250/391] Loss: 0.7469 Acc:74.02%
+Training: Epoch[011/190] Iteration[300/391] Loss: 0.7455 Acc:74.14%
+Training: Epoch[011/190] Iteration[350/391] Loss: 0.7417 Acc:74.34%
+Epoch[011/190] Train Acc: 74.37% Valid Acc:74.67% Train loss:0.7403 Valid loss:0.7616 LR:0.1
+Training: Epoch[012/190] Iteration[050/391] Loss: 0.6917 Acc:75.88%
+Training: Epoch[012/190] Iteration[100/391] Loss: 0.7067 Acc:75.66%
+Training: Epoch[012/190] Iteration[150/391] Loss: 0.7060 Acc:75.52%
+Training: Epoch[012/190] Iteration[200/391] Loss: 0.7037 Acc:75.70%
+Training: Epoch[012/190] Iteration[250/391] Loss: 0.7025 Acc:75.76%
+Training: Epoch[012/190] Iteration[300/391] Loss: 0.6993 Acc:75.95%
+Training: Epoch[012/190] Iteration[350/391] Loss: 0.7002 Acc:75.92%
+Epoch[012/190] Train Acc: 75.95% Valid Acc:76.13% Train loss:0.6998 Valid loss:0.6826 LR:0.1
+Training: Epoch[013/190] Iteration[050/391] Loss: 0.6606 Acc:76.92%
+Training: Epoch[013/190] Iteration[100/391] Loss: 0.6648 Acc:76.85%
+Training: Epoch[013/190] Iteration[150/391] Loss: 0.6594 Acc:77.16%
+Training: Epoch[013/190] Iteration[200/391] Loss: 0.6593 Acc:77.12%
+Training: Epoch[013/190] Iteration[250/391] Loss: 0.6594 Acc:77.24%
+Training: Epoch[013/190] Iteration[300/391] Loss: 0.6590 Acc:77.37%
+Training: Epoch[013/190] Iteration[350/391] Loss: 0.6625 Acc:77.30%
+Epoch[013/190] Train Acc: 77.32% Valid Acc:76.67% Train loss:0.6632 Valid loss:0.6929 LR:0.1
+Training: Epoch[014/190] Iteration[050/391] Loss: 0.6158 Acc:78.92%
+Training: Epoch[014/190] Iteration[100/391] Loss: 0.6209 Acc:78.79%
+Training: Epoch[014/190] Iteration[150/391] Loss: 0.6324 Acc:78.35%
+Training: Epoch[014/190] Iteration[200/391] Loss: 0.6359 Acc:78.14%
+Training: Epoch[014/190] Iteration[250/391] Loss: 0.6329 Acc:78.33%
+Training: Epoch[014/190] Iteration[300/391] Loss: 0.6311 Acc:78.41%
+Training: Epoch[014/190] Iteration[350/391] Loss: 0.6314 Acc:78.41%
+Epoch[014/190] Train Acc: 78.59% Valid Acc:76.91% Train loss:0.6270 Valid loss:0.6844 LR:0.1
+Training: Epoch[015/190] Iteration[050/391] Loss: 0.5965 Acc:79.70%
+Training: Epoch[015/190] Iteration[100/391] Loss: 0.6129 Acc:79.28%
+Training: Epoch[015/190] Iteration[150/391] Loss: 0.6043 Acc:79.59%
+Training: Epoch[015/190] Iteration[200/391] Loss: 0.6033 Acc:79.64%
+Training: Epoch[015/190] Iteration[250/391] Loss: 0.5955 Acc:79.88%
+Training: Epoch[015/190] Iteration[300/391] Loss: 0.5985 Acc:79.79%
+Training: Epoch[015/190] Iteration[350/391] Loss: 0.5957 Acc:79.82%
+Epoch[015/190] Train Acc: 79.79% Valid Acc:78.08% Train loss:0.5972 Valid loss:0.6539 LR:0.1
+Training: Epoch[016/190] Iteration[050/391] Loss: 0.5707 Acc:80.52%
+Training: Epoch[016/190] Iteration[100/391] Loss: 0.5670 Acc:80.70%
+Training: Epoch[016/190] Iteration[150/391] Loss: 0.5671 Acc:80.79%
+Training: Epoch[016/190] Iteration[200/391] Loss: 0.5645 Acc:80.87%
+Training: Epoch[016/190] Iteration[250/391] Loss: 0.5680 Acc:80.75%
+Training: Epoch[016/190] Iteration[300/391] Loss: 0.5719 Acc:80.70%
+Training: Epoch[016/190] Iteration[350/391] Loss: 0.5735 Acc:80.65%
+Epoch[016/190] Train Acc: 80.66% Valid Acc:78.14% Train loss:0.5722 Valid loss:0.6622 LR:0.1
+Training: Epoch[017/190] Iteration[050/391] Loss: 0.5539 Acc:81.06%
+Training: Epoch[017/190] Iteration[100/391] Loss: 0.5626 Acc:80.79%
+Training: Epoch[017/190] Iteration[150/391] Loss: 0.5478 Acc:81.32%
+Training: Epoch[017/190] Iteration[200/391] Loss: 0.5467 Acc:81.42%
+Training: Epoch[017/190] Iteration[250/391] Loss: 0.5517 Acc:81.19%
+Training: Epoch[017/190] Iteration[300/391] Loss: 0.5532 Acc:81.20%
+Training: Epoch[017/190] Iteration[350/391] Loss: 0.5566 Acc:81.05%
+Epoch[017/190] Train Acc: 81.12% Valid Acc:79.37% Train loss:0.5543 Valid loss:0.6408 LR:0.1
+Training: Epoch[018/190] Iteration[050/391] Loss: 0.5517 Acc:81.30%
+Training: Epoch[018/190] Iteration[100/391] Loss: 0.5449 Acc:81.61%
+Training: Epoch[018/190] Iteration[150/391] Loss: 0.5478 Acc:81.52%
+Training: Epoch[018/190] Iteration[200/391] Loss: 0.5410 Acc:81.74%
+Training: Epoch[018/190] Iteration[250/391] Loss: 0.5448 Acc:81.52%
+Training: Epoch[018/190] Iteration[300/391] Loss: 0.5431 Acc:81.57%
+Training: Epoch[018/190] Iteration[350/391] Loss: 0.5436 Acc:81.56%
+Epoch[018/190] Train Acc: 81.61% Valid Acc:78.37% Train loss:0.5414 Valid loss:0.6560 LR:0.1
+Training: Epoch[019/190] Iteration[050/391] Loss: 0.5026 Acc:82.94%
+Training: Epoch[019/190] Iteration[100/391] Loss: 0.4966 Acc:83.52%
+Training: Epoch[019/190] Iteration[150/391] Loss: 0.4954 Acc:83.59%
+Training: Epoch[019/190] Iteration[200/391] Loss: 0.5021 Acc:83.30%
+Training: Epoch[019/190] Iteration[250/391] Loss: 0.5068 Acc:83.12%
+Training: Epoch[019/190] Iteration[300/391] Loss: 0.5126 Acc:82.91%
+Training: Epoch[019/190] Iteration[350/391] Loss: 0.5137 Acc:82.85%
+Epoch[019/190] Train Acc: 82.76% Valid Acc:79.83% Train loss:0.5166 Valid loss:0.5860 LR:0.1
+Training: Epoch[020/190] Iteration[050/391] Loss: 0.4813 Acc:83.58%
+Training: Epoch[020/190] Iteration[100/391] Loss: 0.4865 Acc:83.45%
+Training: Epoch[020/190] Iteration[150/391] Loss: 0.4903 Acc:83.15%
+Training: Epoch[020/190] Iteration[200/391] Loss: 0.4945 Acc:83.03%
+Training: Epoch[020/190] Iteration[250/391] Loss: 0.4967 Acc:83.08%
+Training: Epoch[020/190] Iteration[300/391] Loss: 0.4979 Acc:83.10%
+Training: Epoch[020/190] Iteration[350/391] Loss: 0.4988 Acc:83.05%
+Epoch[020/190] Train Acc: 82.96% Valid Acc:82.39% Train loss:0.5018 Valid loss:0.5356 LR:0.1
+Training: Epoch[021/190] Iteration[050/391] Loss: 0.5038 Acc:82.81%
+Training: Epoch[021/190] Iteration[100/391] Loss: 0.4853 Acc:83.41%
+Training: Epoch[021/190] Iteration[150/391] Loss: 0.4872 Acc:83.52%
+Training: Epoch[021/190] Iteration[200/391] Loss: 0.4846 Acc:83.67%
+Training: Epoch[021/190] Iteration[250/391] Loss: 0.4832 Acc:83.70%
+Training: Epoch[021/190] Iteration[300/391] Loss: 0.4842 Acc:83.57%
+Training: Epoch[021/190] Iteration[350/391] Loss: 0.4845 Acc:83.56%
+Epoch[021/190] Train Acc: 83.64% Valid Acc:75.48% Train loss:0.4836 Valid loss:0.7800 LR:0.1
+Training: Epoch[022/190] Iteration[050/391] Loss: 0.4666 Acc:84.44%
+Training: Epoch[022/190] Iteration[100/391] Loss: 0.4634 Acc:84.46%
+Training: Epoch[022/190] Iteration[150/391] Loss: 0.4681 Acc:84.27%
+Training: Epoch[022/190] Iteration[200/391] Loss: 0.4671 Acc:84.29%
+Training: Epoch[022/190] Iteration[250/391] Loss: 0.4702 Acc:84.20%
+Training: Epoch[022/190] Iteration[300/391] Loss: 0.4673 Acc:84.31%
+Training: Epoch[022/190] Iteration[350/391] Loss: 0.4687 Acc:84.22%
+Epoch[022/190] Train Acc: 84.08% Valid Acc:80.09% Train loss:0.4719 Valid loss:0.5797 LR:0.1
+Training: Epoch[023/190] Iteration[050/391] Loss: 0.4651 Acc:84.27%
+Training: Epoch[023/190] Iteration[100/391] Loss: 0.4604 Acc:84.46%
+Training: Epoch[023/190] Iteration[150/391] Loss: 0.4651 Acc:84.22%
+Training: Epoch[023/190] Iteration[200/391] Loss: 0.4641 Acc:84.28%
+Training: Epoch[023/190] Iteration[250/391] Loss: 0.4609 Acc:84.49%
+Training: Epoch[023/190] Iteration[300/391] Loss: 0.4627 Acc:84.41%
+Training: Epoch[023/190] Iteration[350/391] Loss: 0.4624 Acc:84.46%
+Epoch[023/190] Train Acc: 84.37% Valid Acc:79.15% Train loss:0.4628 Valid loss:0.6698 LR:0.1
+Training: Epoch[024/190] Iteration[050/391] Loss: 0.4547 Acc:85.09%
+Training: Epoch[024/190] Iteration[100/391] Loss: 0.4506 Acc:85.01%
+Training: Epoch[024/190] Iteration[150/391] Loss: 0.4484 Acc:85.01%
+Training: Epoch[024/190] Iteration[200/391] Loss: 0.4494 Acc:84.77%
+Training: Epoch[024/190] Iteration[250/391] Loss: 0.4539 Acc:84.61%
+Training: Epoch[024/190] Iteration[300/391] Loss: 0.4570 Acc:84.52%
+Training: Epoch[024/190] Iteration[350/391] Loss: 0.4567 Acc:84.53%
+Epoch[024/190] Train Acc: 84.57% Valid Acc:83.01% Train loss:0.4572 Valid loss:0.5131 LR:0.1
+Training: Epoch[025/190] Iteration[050/391] Loss: 0.4346 Acc:85.48%
+Training: Epoch[025/190] Iteration[100/391] Loss: 0.4337 Acc:85.39%
+Training: Epoch[025/190] Iteration[150/391] Loss: 0.4343 Acc:85.35%
+Training: Epoch[025/190] Iteration[200/391] Loss: 0.4403 Acc:85.25%
+Training: Epoch[025/190] Iteration[250/391] Loss: 0.4397 Acc:85.19%
+Training: Epoch[025/190] Iteration[300/391] Loss: 0.4411 Acc:85.08%
+Training: Epoch[025/190] Iteration[350/391] Loss: 0.4438 Acc:84.99%
+Epoch[025/190] Train Acc: 84.94% Valid Acc:83.71% Train loss:0.4441 Valid loss:0.5022 LR:0.1
+Training: Epoch[026/190] Iteration[050/391] Loss: 0.4209 Acc:85.55%
+Training: Epoch[026/190] Iteration[100/391] Loss: 0.4355 Acc:85.16%
+Training: Epoch[026/190] Iteration[150/391] Loss: 0.4340 Acc:85.36%
+Training: Epoch[026/190] Iteration[200/391] Loss: 0.4345 Acc:85.36%
+Training: Epoch[026/190] Iteration[250/391] Loss: 0.4322 Acc:85.44%
+Training: Epoch[026/190] Iteration[300/391] Loss: 0.4326 Acc:85.38%
+Training: Epoch[026/190] Iteration[350/391] Loss: 0.4367 Acc:85.15%
+Epoch[026/190] Train Acc: 85.25% Valid Acc:83.98% Train loss:0.4339 Valid loss:0.4725 LR:0.1
+Training: Epoch[027/190] Iteration[050/391] Loss: 0.4220 Acc:85.66%
+Training: Epoch[027/190] Iteration[100/391] Loss: 0.4179 Acc:85.84%
+Training: Epoch[027/190] Iteration[150/391] Loss: 0.4167 Acc:85.96%
+Training: Epoch[027/190] Iteration[200/391] Loss: 0.4193 Acc:85.82%
+Training: Epoch[027/190] Iteration[250/391] Loss: 0.4197 Acc:85.85%
+Training: Epoch[027/190] Iteration[300/391] Loss: 0.4198 Acc:85.85%
+Training: Epoch[027/190] Iteration[350/391] Loss: 0.4220 Acc:85.79%
+Epoch[027/190] Train Acc: 85.73% Valid Acc:82.80% Train loss:0.4239 Valid loss:0.5182 LR:0.1
+Training: Epoch[028/190] Iteration[050/391] Loss: 0.4072 Acc:86.25%
+Training: Epoch[028/190] Iteration[100/391] Loss: 0.4086 Acc:86.19%
+Training: Epoch[028/190] Iteration[150/391] Loss: 0.4096 Acc:86.08%
+Training: Epoch[028/190] Iteration[200/391] Loss: 0.4094 Acc:86.11%
+Training: Epoch[028/190] Iteration[250/391] Loss: 0.4117 Acc:86.06%
+Training: Epoch[028/190] Iteration[300/391] Loss: 0.4146 Acc:85.97%
+Training: Epoch[028/190] Iteration[350/391] Loss: 0.4158 Acc:85.94%
+Epoch[028/190] Train Acc: 85.97% Valid Acc:81.86% Train loss:0.4156 Valid loss:0.5731 LR:0.1
+Training: Epoch[029/190] Iteration[050/391] Loss: 0.4069 Acc:86.25%
+Training: Epoch[029/190] Iteration[100/391] Loss: 0.4073 Acc:86.26%
+Training: Epoch[029/190] Iteration[150/391] Loss: 0.3967 Acc:86.62%
+Training: Epoch[029/190] Iteration[200/391] Loss: 0.4021 Acc:86.35%
+Training: Epoch[029/190] Iteration[250/391] Loss: 0.4025 Acc:86.37%
+Training: Epoch[029/190] Iteration[300/391] Loss: 0.4048 Acc:86.36%
+Training: Epoch[029/190] Iteration[350/391] Loss: 0.4072 Acc:86.34%
+Epoch[029/190] Train Acc: 86.35% Valid Acc:84.00% Train loss:0.4071 Valid loss:0.4734 LR:0.1
+Training: Epoch[030/190] Iteration[050/391] Loss: 0.4005 Acc:86.48%
+Training: Epoch[030/190] Iteration[100/391] Loss: 0.3894 Acc:86.94%
+Training: Epoch[030/190] Iteration[150/391] Loss: 0.3894 Acc:87.03%
+Training: Epoch[030/190] Iteration[200/391] Loss: 0.3938 Acc:86.85%
+Training: Epoch[030/190] Iteration[250/391] Loss: 0.3973 Acc:86.71%
+Training: Epoch[030/190] Iteration[300/391] Loss: 0.3984 Acc:86.68%
+Training: Epoch[030/190] Iteration[350/391] Loss: 0.3996 Acc:86.70%
+Epoch[030/190] Train Acc: 86.58% Valid Acc:84.38% Train loss:0.4022 Valid loss:0.4630 LR:0.1
+Training: Epoch[031/190] Iteration[050/391] Loss: 0.3699 Acc:87.33%
+Training: Epoch[031/190] Iteration[100/391] Loss: 0.3798 Acc:87.18%
+Training: Epoch[031/190] Iteration[150/391] Loss: 0.3864 Acc:87.03%
+Training: Epoch[031/190] Iteration[200/391] Loss: 0.3871 Acc:86.98%
+Training: Epoch[031/190] Iteration[250/391] Loss: 0.3906 Acc:86.85%
+Training: Epoch[031/190] Iteration[300/391] Loss: 0.3909 Acc:86.90%
+Training: Epoch[031/190] Iteration[350/391] Loss: 0.3917 Acc:86.84%
+Epoch[031/190] Train Acc: 86.81% Valid Acc:83.22% Train loss:0.3919 Valid loss:0.5149 LR:0.1
+Training: Epoch[032/190] Iteration[050/391] Loss: 0.3591 Acc:87.83%
+Training: Epoch[032/190] Iteration[100/391] Loss: 0.3657 Acc:87.62%
+Training: Epoch[032/190] Iteration[150/391] Loss: 0.3802 Acc:87.28%
+Training: Epoch[032/190] Iteration[200/391] Loss: 0.3820 Acc:87.15%
+Training: Epoch[032/190] Iteration[250/391] Loss: 0.3866 Acc:87.02%
+Training: Epoch[032/190] Iteration[300/391] Loss: 0.3879 Acc:87.02%
+Training: Epoch[032/190] Iteration[350/391] Loss: 0.3870 Acc:87.00%
+Epoch[032/190] Train Acc: 87.03% Valid Acc:84.39% Train loss:0.3855 Valid loss:0.4687 LR:0.1
+Training: Epoch[033/190] Iteration[050/391] Loss: 0.3615 Acc:87.91%
+Training: Epoch[033/190] Iteration[100/391] Loss: 0.3645 Acc:87.98%
+Training: Epoch[033/190] Iteration[150/391] Loss: 0.3723 Acc:87.60%
+Training: Epoch[033/190] Iteration[200/391] Loss: 0.3738 Acc:87.46%
+Training: Epoch[033/190] Iteration[250/391] Loss: 0.3749 Acc:87.40%
+Training: Epoch[033/190] Iteration[300/391] Loss: 0.3754 Acc:87.34%
+Training: Epoch[033/190] Iteration[350/391] Loss: 0.3776 Acc:87.23%
+Epoch[033/190] Train Acc: 87.29% Valid Acc:83.51% Train loss:0.3759 Valid loss:0.5143 LR:0.1
+Training: Epoch[034/190] Iteration[050/391] Loss: 0.3768 Acc:87.36%
+Training: Epoch[034/190] Iteration[100/391] Loss: 0.3651 Acc:87.62%
+Training: Epoch[034/190] Iteration[150/391] Loss: 0.3645 Acc:87.69%
+Training: Epoch[034/190] Iteration[200/391] Loss: 0.3724 Acc:87.52%
+Training: Epoch[034/190] Iteration[250/391] Loss: 0.3738 Acc:87.48%
+Training: Epoch[034/190] Iteration[300/391] Loss: 0.3763 Acc:87.43%
+Training: Epoch[034/190] Iteration[350/391] Loss: 0.3755 Acc:87.42%
+Epoch[034/190] Train Acc: 87.38% Valid Acc:82.46% Train loss:0.3769 Valid loss:0.5581 LR:0.1
+Training: Epoch[035/190] Iteration[050/391] Loss: 0.3682 Acc:87.56%
+Training: Epoch[035/190] Iteration[100/391] Loss: 0.3649 Acc:87.75%
+Training: Epoch[035/190] Iteration[150/391] Loss: 0.3596 Acc:88.01%
+Training: Epoch[035/190] Iteration[200/391] Loss: 0.3630 Acc:87.82%
+Training: Epoch[035/190] Iteration[250/391] Loss: 0.3658 Acc:87.70%
+Training: Epoch[035/190] Iteration[300/391] Loss: 0.3672 Acc:87.67%
+Training: Epoch[035/190] Iteration[350/391] Loss: 0.3662 Acc:87.69%
+Epoch[035/190] Train Acc: 87.71% Valid Acc:82.98% Train loss:0.3653 Valid loss:0.5227 LR:0.1
+Training: Epoch[036/190] Iteration[050/391] Loss: 0.3409 Acc:88.36%
+Training: Epoch[036/190] Iteration[100/391] Loss: 0.3616 Acc:87.91%
+Training: Epoch[036/190] Iteration[150/391] Loss: 0.3652 Acc:87.93%
+Training: Epoch[036/190] Iteration[200/391] Loss: 0.3694 Acc:87.77%
+Training: Epoch[036/190] Iteration[250/391] Loss: 0.3677 Acc:87.87%
+Training: Epoch[036/190] Iteration[300/391] Loss: 0.3676 Acc:87.78%
+Training: Epoch[036/190] Iteration[350/391] Loss: 0.3663 Acc:87.76%
+Epoch[036/190] Train Acc: 87.73% Valid Acc:82.65% Train loss:0.3684 Valid loss:0.5373 LR:0.1
+Training: Epoch[037/190] Iteration[050/391] Loss: 0.3436 Acc:88.30%
+Training: Epoch[037/190] Iteration[100/391] Loss: 0.3448 Acc:88.37%
+Training: Epoch[037/190] Iteration[150/391] Loss: 0.3548 Acc:88.18%
+Training: Epoch[037/190] Iteration[200/391] Loss: 0.3576 Acc:88.09%
+Training: Epoch[037/190] Iteration[250/391] Loss: 0.3612 Acc:87.99%
+Training: Epoch[037/190] Iteration[300/391] Loss: 0.3579 Acc:88.04%
+Training: Epoch[037/190] Iteration[350/391] Loss: 0.3588 Acc:87.98%
+Epoch[037/190] Train Acc: 87.90% Valid Acc:84.66% Train loss:0.3605 Valid loss:0.4717 LR:0.1
+Training: Epoch[038/190] Iteration[050/391] Loss: 0.3205 Acc:89.58%
+Training: Epoch[038/190] Iteration[100/391] Loss: 0.3347 Acc:88.70%
+Training: Epoch[038/190] Iteration[150/391] Loss: 0.3362 Acc:88.59%
+Training: Epoch[038/190] Iteration[200/391] Loss: 0.3471 Acc:88.23%
+Training: Epoch[038/190] Iteration[250/391] Loss: 0.3499 Acc:88.19%
+Training: Epoch[038/190] Iteration[300/391] Loss: 0.3476 Acc:88.25%
+Training: Epoch[038/190] Iteration[350/391] Loss: 0.3539 Acc:88.02%
+Epoch[038/190] Train Acc: 87.90% Valid Acc:83.79% Train loss:0.3556 Valid loss:0.5065 LR:0.1
+Training: Epoch[039/190] Iteration[050/391] Loss: 0.3325 Acc:88.72%
+Training: Epoch[039/190] Iteration[100/391] Loss: 0.3363 Acc:88.76%
+Training: Epoch[039/190] Iteration[150/391] Loss: 0.3529 Acc:88.10%
+Training: Epoch[039/190] Iteration[200/391] Loss: 0.3491 Acc:88.26%
+Training: Epoch[039/190] Iteration[250/391] Loss: 0.3516 Acc:88.12%
+Training: Epoch[039/190] Iteration[300/391] Loss: 0.3529 Acc:88.02%
+Training: Epoch[039/190] Iteration[350/391] Loss: 0.3544 Acc:87.98%
+Epoch[039/190] Train Acc: 88.01% Valid Acc:85.31% Train loss:0.3544 Valid loss:0.4438 LR:0.1
+Training: Epoch[040/190] Iteration[050/391] Loss: 0.3224 Acc:88.89%
+Training: Epoch[040/190] Iteration[100/391] Loss: 0.3389 Acc:88.59%
+Training: Epoch[040/190] Iteration[150/391] Loss: 0.3356 Acc:88.62%
+Training: Epoch[040/190] Iteration[200/391] Loss: 0.3383 Acc:88.60%
+Training: Epoch[040/190] Iteration[250/391] Loss: 0.3480 Acc:88.22%
+Training: Epoch[040/190] Iteration[300/391] Loss: 0.3486 Acc:88.27%
+Training: Epoch[040/190] Iteration[350/391] Loss: 0.3502 Acc:88.17%
+Epoch[040/190] Train Acc: 88.17% Valid Acc:83.18% Train loss:0.3513 Valid loss:0.5081 LR:0.1
+Training: Epoch[041/190] Iteration[050/391] Loss: 0.3339 Acc:88.25%
+Training: Epoch[041/190] Iteration[100/391] Loss: 0.3390 Acc:88.34%
+Training: Epoch[041/190] Iteration[150/391] Loss: 0.3346 Acc:88.67%
+Training: Epoch[041/190] Iteration[200/391] Loss: 0.3437 Acc:88.45%
+Training: Epoch[041/190] Iteration[250/391] Loss: 0.3436 Acc:88.44%
+Training: Epoch[041/190] Iteration[300/391] Loss: 0.3488 Acc:88.22%
+Training: Epoch[041/190] Iteration[350/391] Loss: 0.3483 Acc:88.26%
+Epoch[041/190] Train Acc: 88.22% Valid Acc:78.04% Train loss:0.3490 Valid loss:0.7075 LR:0.1
+Training: Epoch[042/190] Iteration[050/391] Loss: 0.3228 Acc:89.12%
+Training: Epoch[042/190] Iteration[100/391] Loss: 0.3188 Acc:89.20%
+Training: Epoch[042/190] Iteration[150/391] Loss: 0.3229 Acc:89.14%
+Training: Epoch[042/190] Iteration[200/391] Loss: 0.3299 Acc:88.87%
+Training: Epoch[042/190] Iteration[250/391] Loss: 0.3311 Acc:88.85%
+Training: Epoch[042/190] Iteration[300/391] Loss: 0.3315 Acc:88.91%
+Training: Epoch[042/190] Iteration[350/391] Loss: 0.3345 Acc:88.80%
+Epoch[042/190] Train Acc: 88.68% Valid Acc:83.56% Train loss:0.3372 Valid loss:0.5008 LR:0.1
+Training: Epoch[043/190] Iteration[050/391] Loss: 0.3303 Acc:88.97%
+Training: Epoch[043/190] Iteration[100/391] Loss: 0.3257 Acc:89.13%
+Training: Epoch[043/190] Iteration[150/391] Loss: 0.3309 Acc:88.83%
+Training: Epoch[043/190] Iteration[200/391] Loss: 0.3324 Acc:88.68%
+Training: Epoch[043/190] Iteration[250/391] Loss: 0.3328 Acc:88.64%
+Training: Epoch[043/190] Iteration[300/391] Loss: 0.3340 Acc:88.58%
+Training: Epoch[043/190] Iteration[350/391] Loss: 0.3324 Acc:88.64%
+Epoch[043/190] Train Acc: 88.65% Valid Acc:83.26% Train loss:0.3320 Valid loss:0.5243 LR:0.1
+Training: Epoch[044/190] Iteration[050/391] Loss: 0.3151 Acc:89.09%
+Training: Epoch[044/190] Iteration[100/391] Loss: 0.3363 Acc:88.50%
+Training: Epoch[044/190] Iteration[150/391] Loss: 0.3290 Acc:88.81%
+Training: Epoch[044/190] Iteration[200/391] Loss: 0.3315 Acc:88.77%
+Training: Epoch[044/190] Iteration[250/391] Loss: 0.3387 Acc:88.51%
+Training: Epoch[044/190] Iteration[300/391] Loss: 0.3388 Acc:88.56%
+Training: Epoch[044/190] Iteration[350/391] Loss: 0.3376 Acc:88.60%
+Epoch[044/190] Train Acc: 88.58% Valid Acc:82.80% Train loss:0.3383 Valid loss:0.5703 LR:0.1
+Training: Epoch[045/190] Iteration[050/391] Loss: 0.3241 Acc:89.48%
+Training: Epoch[045/190] Iteration[100/391] Loss: 0.3230 Acc:89.43%
+Training: Epoch[045/190] Iteration[150/391] Loss: 0.3240 Acc:89.41%
+Training: Epoch[045/190] Iteration[200/391] Loss: 0.3249 Acc:89.27%
+Training: Epoch[045/190] Iteration[250/391] Loss: 0.3279 Acc:89.07%
+Training: Epoch[045/190] Iteration[300/391] Loss: 0.3295 Acc:88.99%
+Training: Epoch[045/190] Iteration[350/391] Loss: 0.3311 Acc:88.94%
+Epoch[045/190] Train Acc: 88.98% Valid Acc:85.15% Train loss:0.3296 Valid loss:0.4709 LR:0.1
+Training: Epoch[046/190] Iteration[050/391] Loss: 0.3039 Acc:89.70%
+Training: Epoch[046/190] Iteration[100/391] Loss: 0.3046 Acc:89.59%
+Training: Epoch[046/190] Iteration[150/391] Loss: 0.3139 Acc:89.48%
+Training: Epoch[046/190] Iteration[200/391] Loss: 0.3165 Acc:89.36%
+Training: Epoch[046/190] Iteration[250/391] Loss: 0.3185 Acc:89.34%
+Training: Epoch[046/190] Iteration[300/391] Loss: 0.3168 Acc:89.36%
+Training: Epoch[046/190] Iteration[350/391] Loss: 0.3190 Acc:89.27%
+Epoch[046/190] Train Acc: 89.18% Valid Acc:84.62% Train loss:0.3219 Valid loss:0.4714 LR:0.1
+Training: Epoch[047/190] Iteration[050/391] Loss: 0.2983 Acc:90.09%
+Training: Epoch[047/190] Iteration[100/391] Loss: 0.3072 Acc:89.63%
+Training: Epoch[047/190] Iteration[150/391] Loss: 0.3106 Acc:89.51%
+Training: Epoch[047/190] Iteration[200/391] Loss: 0.3156 Acc:89.42%
+Training: Epoch[047/190] Iteration[250/391] Loss: 0.3168 Acc:89.30%
+Training: Epoch[047/190] Iteration[300/391] Loss: 0.3188 Acc:89.29%
+Training: Epoch[047/190] Iteration[350/391] Loss: 0.3200 Acc:89.26%
+Epoch[047/190] Train Acc: 89.24% Valid Acc:85.12% Train loss:0.3201 Valid loss:0.4712 LR:0.1
+Training: Epoch[048/190] Iteration[050/391] Loss: 0.3070 Acc:89.75%
+Training: Epoch[048/190] Iteration[100/391] Loss: 0.3172 Acc:89.36%
+Training: Epoch[048/190] Iteration[150/391] Loss: 0.3170 Acc:89.40%
+Training: Epoch[048/190] Iteration[200/391] Loss: 0.3100 Acc:89.50%
+Training: Epoch[048/190] Iteration[250/391] Loss: 0.3149 Acc:89.42%
+Training: Epoch[048/190] Iteration[300/391] Loss: 0.3171 Acc:89.36%
+Training: Epoch[048/190] Iteration[350/391] Loss: 0.3207 Acc:89.28%
+Epoch[048/190] Train Acc: 89.20% Valid Acc:86.41% Train loss:0.3218 Valid loss:0.4211 LR:0.1
+Training: Epoch[049/190] Iteration[050/391] Loss: 0.3222 Acc:89.02%
+Training: Epoch[049/190] Iteration[100/391] Loss: 0.3122 Acc:89.48%
+Training: Epoch[049/190] Iteration[150/391] Loss: 0.3130 Acc:89.48%
+Training: Epoch[049/190] Iteration[200/391] Loss: 0.3115 Acc:89.49%
+Training: Epoch[049/190] Iteration[250/391] Loss: 0.3134 Acc:89.31%
+Training: Epoch[049/190] Iteration[300/391] Loss: 0.3135 Acc:89.33%
+Training: Epoch[049/190] Iteration[350/391] Loss: 0.3186 Acc:89.17%
+Epoch[049/190] Train Acc: 89.06% Valid Acc:80.99% Train loss:0.3213 Valid loss:0.6195 LR:0.1
+Training: Epoch[050/190] Iteration[050/391] Loss: 0.2954 Acc:89.38%
+Training: Epoch[050/190] Iteration[100/391] Loss: 0.3034 Acc:89.48%
+Training: Epoch[050/190] Iteration[150/391] Loss: 0.3074 Acc:89.35%
+Training: Epoch[050/190] Iteration[200/391] Loss: 0.3102 Acc:89.29%
+Training: Epoch[050/190] Iteration[250/391] Loss: 0.3148 Acc:89.23%
+Training: Epoch[050/190] Iteration[300/391] Loss: 0.3154 Acc:89.29%
+Training: Epoch[050/190] Iteration[350/391] Loss: 0.3151 Acc:89.28%
+Epoch[050/190] Train Acc: 89.21% Valid Acc:85.03% Train loss:0.3154 Valid loss:0.4765 LR:0.1
+Training: Epoch[051/190] Iteration[050/391] Loss: 0.3101 Acc:89.78%
+Training: Epoch[051/190] Iteration[100/391] Loss: 0.3036 Acc:89.94%
+Training: Epoch[051/190] Iteration[150/391] Loss: 0.3004 Acc:90.09%
+Training: Epoch[051/190] Iteration[200/391] Loss: 0.3071 Acc:89.74%
+Training: Epoch[051/190] Iteration[250/391] Loss: 0.3045 Acc:89.79%
+Training: Epoch[051/190] Iteration[300/391] Loss: 0.3058 Acc:89.72%
+Training: Epoch[051/190] Iteration[350/391] Loss: 0.3099 Acc:89.59%
+Epoch[051/190] Train Acc: 89.46% Valid Acc:84.59% Train loss:0.3138 Valid loss:0.4861 LR:0.1
+Training: Epoch[052/190] Iteration[050/391] Loss: 0.3016 Acc:89.59%
+Training: Epoch[052/190] Iteration[100/391] Loss: 0.3037 Acc:89.68%
+Training: Epoch[052/190] Iteration[150/391] Loss: 0.2998 Acc:89.84%
+Training: Epoch[052/190] Iteration[200/391] Loss: 0.3050 Acc:89.65%
+Training: Epoch[052/190] Iteration[250/391] Loss: 0.3073 Acc:89.49%
+Training: Epoch[052/190] Iteration[300/391] Loss: 0.3112 Acc:89.38%
+Training: Epoch[052/190] Iteration[350/391] Loss: 0.3105 Acc:89.40%
+Epoch[052/190] Train Acc: 89.40% Valid Acc:85.93% Train loss:0.3111 Valid loss:0.4377 LR:0.1
+Training: Epoch[053/190] Iteration[050/391] Loss: 0.2722 Acc:90.92%
+Training: Epoch[053/190] Iteration[100/391] Loss: 0.2927 Acc:90.08%
+Training: Epoch[053/190] Iteration[150/391] Loss: 0.2974 Acc:89.86%
+Training: Epoch[053/190] Iteration[200/391] Loss: 0.2996 Acc:89.82%
+Training: Epoch[053/190] Iteration[250/391] Loss: 0.2989 Acc:89.86%
+Training: Epoch[053/190] Iteration[300/391] Loss: 0.3035 Acc:89.68%
+Training: Epoch[053/190] Iteration[350/391] Loss: 0.3032 Acc:89.73%
+Epoch[053/190] Train Acc: 89.63% Valid Acc:81.20% Train loss:0.3054 Valid loss:0.6192 LR:0.1
+Training: Epoch[054/190] Iteration[050/391] Loss: 0.2981 Acc:90.03%
+Training: Epoch[054/190] Iteration[100/391] Loss: 0.2978 Acc:90.11%
+Training: Epoch[054/190] Iteration[150/391] Loss: 0.3021 Acc:89.90%
+Training: Epoch[054/190] Iteration[200/391] Loss: 0.3036 Acc:89.88%
+Training: Epoch[054/190] Iteration[250/391] Loss: 0.3064 Acc:89.81%
+Training: Epoch[054/190] Iteration[300/391] Loss: 0.3071 Acc:89.77%
+Training: Epoch[054/190] Iteration[350/391] Loss: 0.3060 Acc:89.78%
+Epoch[054/190] Train Acc: 89.68% Valid Acc:84.10% Train loss:0.3080 Valid loss:0.5305 LR:0.1
+Training: Epoch[055/190] Iteration[050/391] Loss: 0.2737 Acc:90.72%
+Training: Epoch[055/190] Iteration[100/391] Loss: 0.2835 Acc:90.58%
+Training: Epoch[055/190] Iteration[150/391] Loss: 0.2865 Acc:90.45%
+Training: Epoch[055/190] Iteration[200/391] Loss: 0.2980 Acc:90.03%
+Training: Epoch[055/190] Iteration[250/391] Loss: 0.2960 Acc:90.05%
+Training: Epoch[055/190] Iteration[300/391] Loss: 0.2973 Acc:90.02%
+Training: Epoch[055/190] Iteration[350/391] Loss: 0.2994 Acc:89.94%
+Epoch[055/190] Train Acc: 89.94% Valid Acc:86.00% Train loss:0.3005 Valid loss:0.4272 LR:0.1
+Training: Epoch[056/190] Iteration[050/391] Loss: 0.2729 Acc:91.08%
+Training: Epoch[056/190] Iteration[100/391] Loss: 0.2830 Acc:90.63%
+Training: Epoch[056/190] Iteration[150/391] Loss: 0.2887 Acc:90.32%
+Training: Epoch[056/190] Iteration[200/391] Loss: 0.2956 Acc:90.09%
+Training: Epoch[056/190] Iteration[250/391] Loss: 0.2988 Acc:89.90%
+Training: Epoch[056/190] Iteration[300/391] Loss: 0.3000 Acc:89.86%
+Training: Epoch[056/190] Iteration[350/391] Loss: 0.3011 Acc:89.82%
+Epoch[056/190] Train Acc: 89.75% Valid Acc:84.77% Train loss:0.3018 Valid loss:0.4775 LR:0.1
+Training: Epoch[057/190] Iteration[050/391] Loss: 0.2735 Acc:90.80%
+Training: Epoch[057/190] Iteration[100/391] Loss: 0.2816 Acc:90.30%
+Training: Epoch[057/190] Iteration[150/391] Loss: 0.2851 Acc:90.22%
+Training: Epoch[057/190] Iteration[200/391] Loss: 0.2957 Acc:89.79%
+Training: Epoch[057/190] Iteration[250/391] Loss: 0.2990 Acc:89.74%
+Training: Epoch[057/190] Iteration[300/391] Loss: 0.2999 Acc:89.76%
+Training: Epoch[057/190] Iteration[350/391] Loss: 0.2994 Acc:89.80%
+Epoch[057/190] Train Acc: 89.85% Valid Acc:83.89% Train loss:0.2981 Valid loss:0.5125 LR:0.1
+Training: Epoch[058/190] Iteration[050/391] Loss: 0.2929 Acc:90.19%
+Training: Epoch[058/190] Iteration[100/391] Loss: 0.2853 Acc:90.45%
+Training: Epoch[058/190] Iteration[150/391] Loss: 0.2895 Acc:90.30%
+Training: Epoch[058/190] Iteration[200/391] Loss: 0.2900 Acc:90.20%
+Training: Epoch[058/190] Iteration[250/391] Loss: 0.2940 Acc:90.03%
+Training: Epoch[058/190] Iteration[300/391] Loss: 0.2946 Acc:90.03%
+Training: Epoch[058/190] Iteration[350/391] Loss: 0.2929 Acc:90.12%
+Epoch[058/190] Train Acc: 90.08% Valid Acc:82.97% Train loss:0.2937 Valid loss:0.5294 LR:0.1
+Training: Epoch[059/190] Iteration[050/391] Loss: 0.2891 Acc:90.50%
+Training: Epoch[059/190] Iteration[100/391] Loss: 0.2968 Acc:90.31%
+Training: Epoch[059/190] Iteration[150/391] Loss: 0.2943 Acc:90.24%
+Training: Epoch[059/190] Iteration[200/391] Loss: 0.2962 Acc:90.17%
+Training: Epoch[059/190] Iteration[250/391] Loss: 0.2969 Acc:90.11%
+Training: Epoch[059/190] Iteration[300/391] Loss: 0.2986 Acc:90.07%
+Training: Epoch[059/190] Iteration[350/391] Loss: 0.2997 Acc:90.05%
+Epoch[059/190] Train Acc: 89.98% Valid Acc:84.66% Train loss:0.3006 Valid loss:0.4617 LR:0.1
+Training: Epoch[060/190] Iteration[050/391] Loss: 0.2791 Acc:90.39%
+Training: Epoch[060/190] Iteration[100/391] Loss: 0.2822 Acc:90.38%
+Training: Epoch[060/190] Iteration[150/391] Loss: 0.2789 Acc:90.51%
+Training: Epoch[060/190] Iteration[200/391] Loss: 0.2812 Acc:90.45%
+Training: Epoch[060/190] Iteration[250/391] Loss: 0.2822 Acc:90.40%
+Training: Epoch[060/190] Iteration[300/391] Loss: 0.2878 Acc:90.22%
+Training: Epoch[060/190] Iteration[350/391] Loss: 0.2875 Acc:90.27%
+Epoch[060/190] Train Acc: 90.25% Valid Acc:85.77% Train loss:0.2885 Valid loss:0.4546 LR:0.1
+Training: Epoch[061/190] Iteration[050/391] Loss: 0.2638 Acc:91.22%
+Training: Epoch[061/190] Iteration[100/391] Loss: 0.2763 Acc:90.77%
+Training: Epoch[061/190] Iteration[150/391] Loss: 0.2830 Acc:90.41%
+Training: Epoch[061/190] Iteration[200/391] Loss: 0.2826 Acc:90.48%
+Training: Epoch[061/190] Iteration[250/391] Loss: 0.2853 Acc:90.48%
+Training: Epoch[061/190] Iteration[300/391] Loss: 0.2857 Acc:90.53%
+Training: Epoch[061/190] Iteration[350/391] Loss: 0.2912 Acc:90.33%
+Epoch[061/190] Train Acc: 90.32% Valid Acc:84.79% Train loss:0.2913 Valid loss:0.4579 LR:0.1
+Training: Epoch[062/190] Iteration[050/391] Loss: 0.2828 Acc:90.31%
+Training: Epoch[062/190] Iteration[100/391] Loss: 0.2870 Acc:90.23%
+Training: Epoch[062/190] Iteration[150/391] Loss: 0.2803 Acc:90.52%
+Training: Epoch[062/190] Iteration[200/391] Loss: 0.2788 Acc:90.62%
+Training: Epoch[062/190] Iteration[250/391] Loss: 0.2783 Acc:90.62%
+Training: Epoch[062/190] Iteration[300/391] Loss: 0.2848 Acc:90.37%
+Training: Epoch[062/190] Iteration[350/391] Loss: 0.2859 Acc:90.36%
+Epoch[062/190] Train Acc: 90.31% Valid Acc:86.54% Train loss:0.2874 Valid loss:0.4158 LR:0.1
+Training: Epoch[063/190] Iteration[050/391] Loss: 0.2602 Acc:91.08%
+Training: Epoch[063/190] Iteration[100/391] Loss: 0.2665 Acc:90.99%
+Training: Epoch[063/190] Iteration[150/391] Loss: 0.2659 Acc:91.08%
+Training: Epoch[063/190] Iteration[200/391] Loss: 0.2713 Acc:90.92%
+Training: Epoch[063/190] Iteration[250/391] Loss: 0.2768 Acc:90.76%
+Training: Epoch[063/190] Iteration[300/391] Loss: 0.2802 Acc:90.62%
+Training: Epoch[063/190] Iteration[350/391] Loss: 0.2819 Acc:90.57%
+Epoch[063/190] Train Acc: 90.51% Valid Acc:85.98% Train loss:0.2836 Valid loss:0.4480 LR:0.1
+Training: Epoch[064/190] Iteration[050/391] Loss: 0.2658 Acc:91.09%
+Training: Epoch[064/190] Iteration[100/391] Loss: 0.2658 Acc:91.00%
+Training: Epoch[064/190] Iteration[150/391] Loss: 0.2674 Acc:90.89%
+Training: Epoch[064/190] Iteration[200/391] Loss: 0.2745 Acc:90.69%
+Training: Epoch[064/190] Iteration[250/391] Loss: 0.2758 Acc:90.63%
+Training: Epoch[064/190] Iteration[300/391] Loss: 0.2781 Acc:90.61%
+Training: Epoch[064/190] Iteration[350/391] Loss: 0.2791 Acc:90.54%
+Epoch[064/190] Train Acc: 90.48% Valid Acc:86.79% Train loss:0.2801 Valid loss:0.4122 LR:0.1
+Training: Epoch[065/190] Iteration[050/391] Loss: 0.2810 Acc:90.50%
+Training: Epoch[065/190] Iteration[100/391] Loss: 0.2699 Acc:91.06%
+Training: Epoch[065/190] Iteration[150/391] Loss: 0.2718 Acc:91.05%
+Training: Epoch[065/190] Iteration[200/391] Loss: 0.2769 Acc:90.86%
+Training: Epoch[065/190] Iteration[250/391] Loss: 0.2748 Acc:90.95%
+Training: Epoch[065/190] Iteration[300/391] Loss: 0.2734 Acc:90.95%
+Training: Epoch[065/190] Iteration[350/391] Loss: 0.2765 Acc:90.88%
+Epoch[065/190] Train Acc: 90.83% Valid Acc:86.52% Train loss:0.2765 Valid loss:0.4224 LR:0.1
+Training: Epoch[066/190] Iteration[050/391] Loss: 0.2608 Acc:91.31%
+Training: Epoch[066/190] Iteration[100/391] Loss: 0.2669 Acc:91.05%
+Training: Epoch[066/190] Iteration[150/391] Loss: 0.2749 Acc:90.81%
+Training: Epoch[066/190] Iteration[200/391] Loss: 0.2770 Acc:90.63%
+Training: Epoch[066/190] Iteration[250/391] Loss: 0.2776 Acc:90.61%
+Training: Epoch[066/190] Iteration[300/391] Loss: 0.2802 Acc:90.49%
+Training: Epoch[066/190] Iteration[350/391] Loss: 0.2814 Acc:90.48%
+Epoch[066/190] Train Acc: 90.41% Valid Acc:85.41% Train loss:0.2839 Valid loss:0.4505 LR:0.1
+Training: Epoch[067/190] Iteration[050/391] Loss: 0.2566 Acc:91.48%
+Training: Epoch[067/190] Iteration[100/391] Loss: 0.2627 Acc:91.01%
+Training: Epoch[067/190] Iteration[150/391] Loss: 0.2637 Acc:90.93%
+Training: Epoch[067/190] Iteration[200/391] Loss: 0.2652 Acc:90.89%
+Training: Epoch[067/190] Iteration[250/391] Loss: 0.2658 Acc:90.99%
+Training: Epoch[067/190] Iteration[300/391] Loss: 0.2690 Acc:90.86%
+Training: Epoch[067/190] Iteration[350/391] Loss: 0.2725 Acc:90.77%
+Epoch[067/190] Train Acc: 90.78% Valid Acc:85.79% Train loss:0.2719 Valid loss:0.4473 LR:0.1
+Training: Epoch[068/190] Iteration[050/391] Loss: 0.2625 Acc:91.05%
+Training: Epoch[068/190] Iteration[100/391] Loss: 0.2653 Acc:90.83%
+Training: Epoch[068/190] Iteration[150/391] Loss: 0.2720 Acc:90.61%
+Training: Epoch[068/190] Iteration[200/391] Loss: 0.2738 Acc:90.63%
+Training: Epoch[068/190] Iteration[250/391] Loss: 0.2730 Acc:90.66%
+Training: Epoch[068/190] Iteration[300/391] Loss: 0.2757 Acc:90.58%
+Training: Epoch[068/190] Iteration[350/391] Loss: 0.2767 Acc:90.55%
+Epoch[068/190] Train Acc: 90.56% Valid Acc:86.42% Train loss:0.2768 Valid loss:0.4324 LR:0.1
+Training: Epoch[069/190] Iteration[050/391] Loss: 0.2617 Acc:91.12%
+Training: Epoch[069/190] Iteration[100/391] Loss: 0.2663 Acc:91.02%
+Training: Epoch[069/190] Iteration[150/391] Loss: 0.2691 Acc:90.79%
+Training: Epoch[069/190] Iteration[200/391] Loss: 0.2748 Acc:90.68%
+Training: Epoch[069/190] Iteration[250/391] Loss: 0.2765 Acc:90.65%
+Training: Epoch[069/190] Iteration[300/391] Loss: 0.2780 Acc:90.62%
+Training: Epoch[069/190] Iteration[350/391] Loss: 0.2766 Acc:90.67%
+Epoch[069/190] Train Acc: 90.62% Valid Acc:86.30% Train loss:0.2774 Valid loss:0.4162 LR:0.1
+Training: Epoch[070/190] Iteration[050/391] Loss: 0.2503 Acc:91.28%
+Training: Epoch[070/190] Iteration[100/391] Loss: 0.2707 Acc:90.57%
+Training: Epoch[070/190] Iteration[150/391] Loss: 0.2813 Acc:90.40%
+Training: Epoch[070/190] Iteration[200/391] Loss: 0.2794 Acc:90.44%
+Training: Epoch[070/190] Iteration[250/391] Loss: 0.2799 Acc:90.45%
+Training: Epoch[070/190] Iteration[300/391] Loss: 0.2814 Acc:90.48%
+Training: Epoch[070/190] Iteration[350/391] Loss: 0.2799 Acc:90.49%
+Epoch[070/190] Train Acc: 90.48% Valid Acc:86.22% Train loss:0.2810 Valid loss:0.4536 LR:0.1
+Training: Epoch[071/190] Iteration[050/391] Loss: 0.2606 Acc:91.25%
+Training: Epoch[071/190] Iteration[100/391] Loss: 0.2663 Acc:91.02%
+Training: Epoch[071/190] Iteration[150/391] Loss: 0.2678 Acc:90.82%
+Training: Epoch[071/190] Iteration[200/391] Loss: 0.2671 Acc:90.88%
+Training: Epoch[071/190] Iteration[250/391] Loss: 0.2673 Acc:90.88%
+Training: Epoch[071/190] Iteration[300/391] Loss: 0.2693 Acc:90.80%
+Training: Epoch[071/190] Iteration[350/391] Loss: 0.2711 Acc:90.77%
+Epoch[071/190] Train Acc: 90.79% Valid Acc:85.27% Train loss:0.2714 Valid loss:0.4769 LR:0.1
+Training: Epoch[072/190] Iteration[050/391] Loss: 0.2548 Acc:91.12%
+Training: Epoch[072/190] Iteration[100/391] Loss: 0.2595 Acc:91.09%
+Training: Epoch[072/190] Iteration[150/391] Loss: 0.2656 Acc:90.90%
+Training: Epoch[072/190] Iteration[200/391] Loss: 0.2668 Acc:90.84%
+Training: Epoch[072/190] Iteration[250/391] Loss: 0.2675 Acc:90.96%
+Training: Epoch[072/190] Iteration[300/391] Loss: 0.2695 Acc:90.90%
+Training: Epoch[072/190] Iteration[350/391] Loss: 0.2701 Acc:90.88%
+Epoch[072/190] Train Acc: 90.76% Valid Acc:86.38% Train loss:0.2729 Valid loss:0.4139 LR:0.1
+Training: Epoch[073/190] Iteration[050/391] Loss: 0.2639 Acc:90.91%
+Training: Epoch[073/190] Iteration[100/391] Loss: 0.2694 Acc:90.89%
+Training: Epoch[073/190] Iteration[150/391] Loss: 0.2705 Acc:90.86%
+Training: Epoch[073/190] Iteration[200/391] Loss: 0.2730 Acc:90.76%
+Training: Epoch[073/190] Iteration[250/391] Loss: 0.2709 Acc:90.82%
+Training: Epoch[073/190] Iteration[300/391] Loss: 0.2695 Acc:90.82%
+Training: Epoch[073/190] Iteration[350/391] Loss: 0.2710 Acc:90.76%
+Epoch[073/190] Train Acc: 90.75% Valid Acc:83.60% Train loss:0.2710 Valid loss:0.5220 LR:0.1
+Training: Epoch[074/190] Iteration[050/391] Loss: 0.2699 Acc:90.91%
+Training: Epoch[074/190] Iteration[100/391] Loss: 0.2636 Acc:91.16%
+Training: Epoch[074/190] Iteration[150/391] Loss: 0.2647 Acc:90.97%
+Training: Epoch[074/190] Iteration[200/391] Loss: 0.2663 Acc:90.86%
+Training: Epoch[074/190] Iteration[250/391] Loss: 0.2687 Acc:90.81%
+Training: Epoch[074/190] Iteration[300/391] Loss: 0.2678 Acc:90.83%
+Training: Epoch[074/190] Iteration[350/391] Loss: 0.2721 Acc:90.69%
+Epoch[074/190] Train Acc: 90.68% Valid Acc:86.57% Train loss:0.2723 Valid loss:0.4126 LR:0.1
+Training: Epoch[075/190] Iteration[050/391] Loss: 0.2507 Acc:91.78%
+Training: Epoch[075/190] Iteration[100/391] Loss: 0.2568 Acc:91.40%
+Training: Epoch[075/190] Iteration[150/391] Loss: 0.2585 Acc:91.28%
+Training: Epoch[075/190] Iteration[200/391] Loss: 0.2625 Acc:91.15%
+Training: Epoch[075/190] Iteration[250/391] Loss: 0.2642 Acc:91.09%
+Training: Epoch[075/190] Iteration[300/391] Loss: 0.2665 Acc:91.04%
+Training: Epoch[075/190] Iteration[350/391] Loss: 0.2669 Acc:91.03%
+Epoch[075/190] Train Acc: 90.95% Valid Acc:86.55% Train loss:0.2687 Valid loss:0.4279 LR:0.1
+Training: Epoch[076/190] Iteration[050/391] Loss: 0.2595 Acc:91.33%
+Training: Epoch[076/190] Iteration[100/391] Loss: 0.2624 Acc:91.10%
+Training: Epoch[076/190] Iteration[150/391] Loss: 0.2605 Acc:91.10%
+Training: Epoch[076/190] Iteration[200/391] Loss: 0.2595 Acc:91.07%
+Training: Epoch[076/190] Iteration[250/391] Loss: 0.2646 Acc:90.96%
+Training: Epoch[076/190] Iteration[300/391] Loss: 0.2662 Acc:90.95%
+Training: Epoch[076/190] Iteration[350/391] Loss: 0.2661 Acc:90.95%
+Epoch[076/190] Train Acc: 90.89% Valid Acc:86.36% Train loss:0.2685 Valid loss:0.4314 LR:0.1
+Training: Epoch[077/190] Iteration[050/391] Loss: 0.2425 Acc:91.56%
+Training: Epoch[077/190] Iteration[100/391] Loss: 0.2451 Acc:91.45%
+Training: Epoch[077/190] Iteration[150/391] Loss: 0.2516 Acc:91.34%
+Training: Epoch[077/190] Iteration[200/391] Loss: 0.2544 Acc:91.32%
+Training: Epoch[077/190] Iteration[250/391] Loss: 0.2601 Acc:91.16%
+Training: Epoch[077/190] Iteration[300/391] Loss: 0.2619 Acc:91.12%
+Training: Epoch[077/190] Iteration[350/391] Loss: 0.2646 Acc:91.04%
+Epoch[077/190] Train Acc: 90.97% Valid Acc:86.03% Train loss:0.2671 Valid loss:0.4328 LR:0.1
+Training: Epoch[078/190] Iteration[050/391] Loss: 0.2557 Acc:91.25%
+Training: Epoch[078/190] Iteration[100/391] Loss: 0.2631 Acc:91.08%
+Training: Epoch[078/190] Iteration[150/391] Loss: 0.2653 Acc:90.98%
+Training: Epoch[078/190] Iteration[200/391] Loss: 0.2639 Acc:91.05%
+Training: Epoch[078/190] Iteration[250/391] Loss: 0.2661 Acc:90.97%
+Training: Epoch[078/190] Iteration[300/391] Loss: 0.2668 Acc:90.96%
+Training: Epoch[078/190] Iteration[350/391] Loss: 0.2698 Acc:90.86%
+Epoch[078/190] Train Acc: 90.76% Valid Acc:86.93% Train loss:0.2719 Valid loss:0.4127 LR:0.1
+Training: Epoch[079/190] Iteration[050/391] Loss: 0.2652 Acc:90.97%
+Training: Epoch[079/190] Iteration[100/391] Loss: 0.2626 Acc:91.00%
+Training: Epoch[079/190] Iteration[150/391] Loss: 0.2615 Acc:90.98%
+Training: Epoch[079/190] Iteration[200/391] Loss: 0.2607 Acc:91.11%
+Training: Epoch[079/190] Iteration[250/391] Loss: 0.2627 Acc:91.06%
+Training: Epoch[079/190] Iteration[300/391] Loss: 0.2623 Acc:91.09%
+Training: Epoch[079/190] Iteration[350/391] Loss: 0.2639 Acc:91.06%
+Epoch[079/190] Train Acc: 91.00% Valid Acc:84.15% Train loss:0.2660 Valid loss:0.4831 LR:0.1
+Training: Epoch[080/190] Iteration[050/391] Loss: 0.2397 Acc:91.52%
+Training: Epoch[080/190] Iteration[100/391] Loss: 0.2450 Acc:91.51%
+Training: Epoch[080/190] Iteration[150/391] Loss: 0.2529 Acc:91.22%
+Training: Epoch[080/190] Iteration[200/391] Loss: 0.2563 Acc:91.19%
+Training: Epoch[080/190] Iteration[250/391] Loss: 0.2595 Acc:91.12%
+Training: Epoch[080/190] Iteration[300/391] Loss: 0.2617 Acc:91.13%
+Training: Epoch[080/190] Iteration[350/391] Loss: 0.2615 Acc:91.16%
+Epoch[080/190] Train Acc: 91.13% Valid Acc:85.96% Train loss:0.2617 Valid loss:0.4572 LR:0.1
+Training: Epoch[081/190] Iteration[050/391] Loss: 0.2408 Acc:91.69%
+Training: Epoch[081/190] Iteration[100/391] Loss: 0.2511 Acc:91.53%
+Training: Epoch[081/190] Iteration[150/391] Loss: 0.2509 Acc:91.53%
+Training: Epoch[081/190] Iteration[200/391] Loss: 0.2501 Acc:91.52%
+Training: Epoch[081/190] Iteration[250/391] Loss: 0.2563 Acc:91.25%
+Training: Epoch[081/190] Iteration[300/391] Loss: 0.2590 Acc:91.18%
+Training: Epoch[081/190] Iteration[350/391] Loss: 0.2604 Acc:91.10%
+Epoch[081/190] Train Acc: 91.10% Valid Acc:86.13% Train loss:0.2610 Valid loss:0.4556 LR:0.1
+Training: Epoch[082/190] Iteration[050/391] Loss: 0.2576 Acc:91.09%
+Training: Epoch[082/190] Iteration[100/391] Loss: 0.2672 Acc:90.65%
+Training: Epoch[082/190] Iteration[150/391] Loss: 0.2628 Acc:90.97%
+Training: Epoch[082/190] Iteration[200/391] Loss: 0.2645 Acc:90.90%
+Training: Epoch[082/190] Iteration[250/391] Loss: 0.2664 Acc:90.89%
+Training: Epoch[082/190] Iteration[300/391] Loss: 0.2640 Acc:90.97%
+Training: Epoch[082/190] Iteration[350/391] Loss: 0.2645 Acc:90.99%
+Epoch[082/190] Train Acc: 90.98% Valid Acc:86.36% Train loss:0.2658 Valid loss:0.4234 LR:0.1
+Training: Epoch[083/190] Iteration[050/391] Loss: 0.2471 Acc:91.78%
+Training: Epoch[083/190] Iteration[100/391] Loss: 0.2553 Acc:91.39%
+Training: Epoch[083/190] Iteration[150/391] Loss: 0.2612 Acc:91.24%
+Training: Epoch[083/190] Iteration[200/391] Loss: 0.2638 Acc:91.18%
+Training: Epoch[083/190] Iteration[250/391] Loss: 0.2627 Acc:91.18%
+Training: Epoch[083/190] Iteration[300/391] Loss: 0.2665 Acc:91.08%
+Training: Epoch[083/190] Iteration[350/391] Loss: 0.2657 Acc:91.08%
+Epoch[083/190] Train Acc: 91.15% Valid Acc:86.98% Train loss:0.2641 Valid loss:0.4295 LR:0.1
+Training: Epoch[084/190] Iteration[050/391] Loss: 0.2410 Acc:91.83%
+Training: Epoch[084/190] Iteration[100/391] Loss: 0.2394 Acc:91.98%
+Training: Epoch[084/190] Iteration[150/391] Loss: 0.2404 Acc:91.96%
+Training: Epoch[084/190] Iteration[200/391] Loss: 0.2414 Acc:91.86%
+Training: Epoch[084/190] Iteration[250/391] Loss: 0.2465 Acc:91.70%
+Training: Epoch[084/190] Iteration[300/391] Loss: 0.2494 Acc:91.57%
+Training: Epoch[084/190] Iteration[350/391] Loss: 0.2557 Acc:91.36%
+Epoch[084/190] Train Acc: 91.33% Valid Acc:81.35% Train loss:0.2568 Valid loss:0.6318 LR:0.1
+Training: Epoch[085/190] Iteration[050/391] Loss: 0.2562 Acc:91.70%
+Training: Epoch[085/190] Iteration[100/391] Loss: 0.2546 Acc:91.55%
+Training: Epoch[085/190] Iteration[150/391] Loss: 0.2585 Acc:91.36%
+Training: Epoch[085/190] Iteration[200/391] Loss: 0.2617 Acc:91.21%
+Training: Epoch[085/190] Iteration[250/391] Loss: 0.2640 Acc:91.07%
+Training: Epoch[085/190] Iteration[300/391] Loss: 0.2642 Acc:91.09%
+Training: Epoch[085/190] Iteration[350/391] Loss: 0.2636 Acc:91.14%
+Epoch[085/190] Train Acc: 91.11% Valid Acc:87.29% Train loss:0.2638 Valid loss:0.4173 LR:0.1
+Training: Epoch[086/190] Iteration[050/391] Loss: 0.2460 Acc:91.66%
+Training: Epoch[086/190] Iteration[100/391] Loss: 0.2477 Acc:91.64%
+Training: Epoch[086/190] Iteration[150/391] Loss: 0.2521 Acc:91.55%
+Training: Epoch[086/190] Iteration[200/391] Loss: 0.2515 Acc:91.55%
+Training: Epoch[086/190] Iteration[250/391] Loss: 0.2555 Acc:91.41%
+Training: Epoch[086/190] Iteration[300/391] Loss: 0.2604 Acc:91.29%
+Training: Epoch[086/190] Iteration[350/391] Loss: 0.2639 Acc:91.16%
+Epoch[086/190] Train Acc: 91.16% Valid Acc:83.77% Train loss:0.2634 Valid loss:0.5477 LR:0.1
+Training: Epoch[087/190] Iteration[050/391] Loss: 0.2451 Acc:91.50%
+Training: Epoch[087/190] Iteration[100/391] Loss: 0.2571 Acc:91.29%
+Training: Epoch[087/190] Iteration[150/391] Loss: 0.2529 Acc:91.39%
+Training: Epoch[087/190] Iteration[200/391] Loss: 0.2546 Acc:91.39%
+Training: Epoch[087/190] Iteration[250/391] Loss: 0.2560 Acc:91.36%
+Training: Epoch[087/190] Iteration[300/391] Loss: 0.2576 Acc:91.30%
+Training: Epoch[087/190] Iteration[350/391] Loss: 0.2588 Acc:91.27%
+Epoch[087/190] Train Acc: 91.19% Valid Acc:86.24% Train loss:0.2606 Valid loss:0.4405 LR:0.1
+Training: Epoch[088/190] Iteration[050/391] Loss: 0.2580 Acc:91.64%
+Training: Epoch[088/190] Iteration[100/391] Loss: 0.2674 Acc:91.22%
+Training: Epoch[088/190] Iteration[150/391] Loss: 0.2632 Acc:91.24%
+Training: Epoch[088/190] Iteration[200/391] Loss: 0.2633 Acc:91.21%
+Training: Epoch[088/190] Iteration[250/391] Loss: 0.2622 Acc:91.21%
+Training: Epoch[088/190] Iteration[300/391] Loss: 0.2589 Acc:91.30%
+Training: Epoch[088/190] Iteration[350/391] Loss: 0.2611 Acc:91.25%
+Epoch[088/190] Train Acc: 91.26% Valid Acc:86.66% Train loss:0.2614 Valid loss:0.4180 LR:0.1
+Training: Epoch[089/190] Iteration[050/391] Loss: 0.2536 Acc:91.52%
+Training: Epoch[089/190] Iteration[100/391] Loss: 0.2375 Acc:91.98%
+Training: Epoch[089/190] Iteration[150/391] Loss: 0.2477 Acc:91.78%
+Training: Epoch[089/190] Iteration[200/391] Loss: 0.2521 Acc:91.53%
+Training: Epoch[089/190] Iteration[250/391] Loss: 0.2533 Acc:91.37%
+Training: Epoch[089/190] Iteration[300/391] Loss: 0.2548 Acc:91.34%
+Training: Epoch[089/190] Iteration[350/391] Loss: 0.2555 Acc:91.32%
+Epoch[089/190] Train Acc: 91.24% Valid Acc:86.59% Train loss:0.2570 Valid loss:0.4444 LR:0.1
+Training: Epoch[090/190] Iteration[050/391] Loss: 0.2289 Acc:92.06%
+Training: Epoch[090/190] Iteration[100/391] Loss: 0.2432 Acc:91.63%
+Training: Epoch[090/190] Iteration[150/391] Loss: 0.2463 Acc:91.42%
+Training: Epoch[090/190] Iteration[200/391] Loss: 0.2424 Acc:91.56%
+Training: Epoch[090/190] Iteration[250/391] Loss: 0.2478 Acc:91.42%
+Training: Epoch[090/190] Iteration[300/391] Loss: 0.2564 Acc:91.13%
+Training: Epoch[090/190] Iteration[350/391] Loss: 0.2578 Acc:91.09%
+Epoch[090/190] Train Acc: 91.08% Valid Acc:84.96% Train loss:0.2585 Valid loss:0.4803 LR:0.1
+Training: Epoch[091/190] Iteration[050/391] Loss: 0.2476 Acc:91.81%
+Training: Epoch[091/190] Iteration[100/391] Loss: 0.2421 Acc:91.88%
+Training: Epoch[091/190] Iteration[150/391] Loss: 0.2467 Acc:91.58%
+Training: Epoch[091/190] Iteration[200/391] Loss: 0.2497 Acc:91.51%
+Training: Epoch[091/190] Iteration[250/391] Loss: 0.2524 Acc:91.43%
+Training: Epoch[091/190] Iteration[300/391] Loss: 0.2519 Acc:91.47%
+Training: Epoch[091/190] Iteration[350/391] Loss: 0.2545 Acc:91.39%
+Epoch[091/190] Train Acc: 91.35% Valid Acc:86.26% Train loss:0.2537 Valid loss:0.4520 LR:0.1
+Training: Epoch[092/190] Iteration[050/391] Loss: 0.2593 Acc:90.95%
+Training: Epoch[092/190] Iteration[100/391] Loss: 0.2511 Acc:91.25%
+Training: Epoch[092/190] Iteration[150/391] Loss: 0.2522 Acc:91.33%
+Training: Epoch[092/190] Iteration[200/391] Loss: 0.2514 Acc:91.37%
+Training: Epoch[092/190] Iteration[250/391] Loss: 0.2565 Acc:91.23%
+Training: Epoch[092/190] Iteration[300/391] Loss: 0.2590 Acc:91.19%
+Training: Epoch[092/190] Iteration[350/391] Loss: 0.2579 Acc:91.22%
+Epoch[092/190] Train Acc: 91.14% Valid Acc:85.46% Train loss:0.2601 Valid loss:0.4650 LR:0.1
+Training: Epoch[093/190] Iteration[050/391] Loss: 0.2398 Acc:92.19%
+Training: Epoch[093/190] Iteration[100/391] Loss: 0.2364 Acc:92.27%
+Training: Epoch[093/190] Iteration[150/391] Loss: 0.2391 Acc:92.15%
+Training: Epoch[093/190] Iteration[200/391] Loss: 0.2470 Acc:91.79%
+Training: Epoch[093/190] Iteration[250/391] Loss: 0.2483 Acc:91.73%
+Training: Epoch[093/190] Iteration[300/391] Loss: 0.2501 Acc:91.69%
+Training: Epoch[093/190] Iteration[350/391] Loss: 0.2506 Acc:91.64%
+Epoch[093/190] Train Acc: 91.58% Valid Acc:86.81% Train loss:0.2525 Valid loss:0.4333 LR:0.1
+Training: Epoch[094/190] Iteration[050/391] Loss: 0.1950 Acc:93.47%
+Training: Epoch[094/190] Iteration[100/391] Loss: 0.1904 Acc:93.59%
+Training: Epoch[094/190] Iteration[150/391] Loss: 0.1805 Acc:93.88%
+Training: Epoch[094/190] Iteration[200/391] Loss: 0.1758 Acc:94.05%
+Training: Epoch[094/190] Iteration[250/391] Loss: 0.1727 Acc:94.16%
+Training: Epoch[094/190] Iteration[300/391] Loss: 0.1693 Acc:94.28%
+Training: Epoch[094/190] Iteration[350/391] Loss: 0.1675 Acc:94.33%
+Epoch[094/190] Train Acc: 94.41% Valid Acc:90.28% Train loss:0.1650 Valid loss:0.3123 LR:0.01
+Training: Epoch[095/190] Iteration[050/391] Loss: 0.1299 Acc:95.55%
+Training: Epoch[095/190] Iteration[100/391] Loss: 0.1332 Acc:95.51%
+Training: Epoch[095/190] Iteration[150/391] Loss: 0.1308 Acc:95.54%
+Training: Epoch[095/190] Iteration[200/391] Loss: 0.1302 Acc:95.55%
+Training: Epoch[095/190] Iteration[250/391] Loss: 0.1320 Acc:95.57%
+Training: Epoch[095/190] Iteration[300/391] Loss: 0.1315 Acc:95.58%
+Training: Epoch[095/190] Iteration[350/391] Loss: 0.1320 Acc:95.53%
+Epoch[095/190] Train Acc: 95.56% Valid Acc:90.75% Train loss:0.1305 Valid loss:0.3068 LR:0.01
+Training: Epoch[096/190] Iteration[050/391] Loss: 0.1219 Acc:95.81%
+Training: Epoch[096/190] Iteration[100/391] Loss: 0.1180 Acc:95.91%
+Training: Epoch[096/190] Iteration[150/391] Loss: 0.1189 Acc:95.91%
+Training: Epoch[096/190] Iteration[200/391] Loss: 0.1191 Acc:95.97%
+Training: Epoch[096/190] Iteration[250/391] Loss: 0.1197 Acc:95.96%
+Training: Epoch[096/190] Iteration[300/391] Loss: 0.1184 Acc:95.98%
+Training: Epoch[096/190] Iteration[350/391] Loss: 0.1190 Acc:95.98%
+Epoch[096/190] Train Acc: 95.99% Valid Acc:90.54% Train loss:0.1188 Valid loss:0.3094 LR:0.01
+Training: Epoch[097/190] Iteration[050/391] Loss: 0.1172 Acc:96.02%
+Training: Epoch[097/190] Iteration[100/391] Loss: 0.1163 Acc:96.01%
+Training: Epoch[097/190] Iteration[150/391] Loss: 0.1151 Acc:96.07%
+Training: Epoch[097/190] Iteration[200/391] Loss: 0.1133 Acc:96.15%
+Training: Epoch[097/190] Iteration[250/391] Loss: 0.1117 Acc:96.19%
+Training: Epoch[097/190] Iteration[300/391] Loss: 0.1110 Acc:96.19%
+Training: Epoch[097/190] Iteration[350/391] Loss: 0.1110 Acc:96.21%
+Epoch[097/190] Train Acc: 96.22% Valid Acc:90.91% Train loss:0.1109 Valid loss:0.3020 LR:0.01
+Training: Epoch[098/190] Iteration[050/391] Loss: 0.0943 Acc:97.06%
+Training: Epoch[098/190] Iteration[100/391] Loss: 0.1000 Acc:96.74%
+Training: Epoch[098/190] Iteration[150/391] Loss: 0.1012 Acc:96.63%
+Training: Epoch[098/190] Iteration[200/391] Loss: 0.1025 Acc:96.55%
+Training: Epoch[098/190] Iteration[250/391] Loss: 0.1040 Acc:96.52%
+Training: Epoch[098/190] Iteration[300/391] Loss: 0.1029 Acc:96.52%
+Training: Epoch[098/190] Iteration[350/391] Loss: 0.1027 Acc:96.52%
+Epoch[098/190] Train Acc: 96.49% Valid Acc:90.98% Train loss:0.1036 Valid loss:0.3080 LR:0.01
+Training: Epoch[099/190] Iteration[050/391] Loss: 0.0898 Acc:96.67%
+Training: Epoch[099/190] Iteration[100/391] Loss: 0.0900 Acc:96.84%
+Training: Epoch[099/190] Iteration[150/391] Loss: 0.0895 Acc:96.91%
+Training: Epoch[099/190] Iteration[200/391] Loss: 0.0919 Acc:96.76%
+Training: Epoch[099/190] Iteration[250/391] Loss: 0.0918 Acc:96.73%
+Training: Epoch[099/190] Iteration[300/391] Loss: 0.0926 Acc:96.73%
+Training: Epoch[099/190] Iteration[350/391] Loss: 0.0947 Acc:96.68%
+Epoch[099/190] Train Acc: 96.69% Valid Acc:91.11% Train loss:0.0951 Valid loss:0.3084 LR:0.01
+Training: Epoch[100/190] Iteration[050/391] Loss: 0.0874 Acc:96.78%
+Training: Epoch[100/190] Iteration[100/391] Loss: 0.0846 Acc:97.03%
+Training: Epoch[100/190] Iteration[150/391] Loss: 0.0876 Acc:96.91%
+Training: Epoch[100/190] Iteration[200/391] Loss: 0.0880 Acc:96.95%
+Training: Epoch[100/190] Iteration[250/391] Loss: 0.0902 Acc:96.94%
+Training: Epoch[100/190] Iteration[300/391] Loss: 0.0923 Acc:96.86%
+Training: Epoch[100/190] Iteration[350/391] Loss: 0.0916 Acc:96.89%
+Epoch[100/190] Train Acc: 96.91% Valid Acc:91.17% Train loss:0.0909 Valid loss:0.3100 LR:0.01
+Training: Epoch[101/190] Iteration[050/391] Loss: 0.0850 Acc:96.58%
+Training: Epoch[101/190] Iteration[100/391] Loss: 0.0833 Acc:96.91%
+Training: Epoch[101/190] Iteration[150/391] Loss: 0.0844 Acc:96.92%
+Training: Epoch[101/190] Iteration[200/391] Loss: 0.0851 Acc:96.97%
+Training: Epoch[101/190] Iteration[250/391] Loss: 0.0846 Acc:97.00%
+Training: Epoch[101/190] Iteration[300/391] Loss: 0.0839 Acc:96.98%
+Training: Epoch[101/190] Iteration[350/391] Loss: 0.0850 Acc:96.94%
+Epoch[101/190] Train Acc: 96.89% Valid Acc:91.27% Train loss:0.0865 Valid loss:0.3066 LR:0.01
+Training: Epoch[102/190] Iteration[050/391] Loss: 0.0796 Acc:97.22%
+Training: Epoch[102/190] Iteration[100/391] Loss: 0.0845 Acc:97.10%
+Training: Epoch[102/190] Iteration[150/391] Loss: 0.0864 Acc:97.09%
+Training: Epoch[102/190] Iteration[200/391] Loss: 0.0876 Acc:97.04%
+Training: Epoch[102/190] Iteration[250/391] Loss: 0.0899 Acc:96.97%
+Training: Epoch[102/190] Iteration[300/391] Loss: 0.0876 Acc:97.03%
+Training: Epoch[102/190] Iteration[350/391] Loss: 0.0864 Acc:97.08%
+Epoch[102/190] Train Acc: 97.09% Valid Acc:91.23% Train loss:0.0863 Valid loss:0.3128 LR:0.01
+Training: Epoch[103/190] Iteration[050/391] Loss: 0.0798 Acc:97.36%
+Training: Epoch[103/190] Iteration[100/391] Loss: 0.0821 Acc:97.17%
+Training: Epoch[103/190] Iteration[150/391] Loss: 0.0787 Acc:97.25%
+Training: Epoch[103/190] Iteration[200/391] Loss: 0.0784 Acc:97.29%
+Training: Epoch[103/190] Iteration[250/391] Loss: 0.0783 Acc:97.27%
+Training: Epoch[103/190] Iteration[300/391] Loss: 0.0790 Acc:97.25%
+Training: Epoch[103/190] Iteration[350/391] Loss: 0.0794 Acc:97.26%
+Epoch[103/190] Train Acc: 97.26% Valid Acc:91.25% Train loss:0.0800 Valid loss:0.3063 LR:0.01
+Training: Epoch[104/190] Iteration[050/391] Loss: 0.0681 Acc:97.53%
+Training: Epoch[104/190] Iteration[100/391] Loss: 0.0769 Acc:97.32%
+Training: Epoch[104/190] Iteration[150/391] Loss: 0.0762 Acc:97.37%
+Training: Epoch[104/190] Iteration[200/391] Loss: 0.0760 Acc:97.43%
+Training: Epoch[104/190] Iteration[250/391] Loss: 0.0758 Acc:97.39%
+Training: Epoch[104/190] Iteration[300/391] Loss: 0.0760 Acc:97.36%
+Training: Epoch[104/190] Iteration[350/391] Loss: 0.0753 Acc:97.39%
+Epoch[104/190] Train Acc: 97.41% Valid Acc:91.27% Train loss:0.0747 Valid loss:0.3163 LR:0.01
+Training: Epoch[105/190] Iteration[050/391] Loss: 0.0739 Acc:97.55%
+Training: Epoch[105/190] Iteration[100/391] Loss: 0.0774 Acc:97.48%
+Training: Epoch[105/190] Iteration[150/391] Loss: 0.0796 Acc:97.38%
+Training: Epoch[105/190] Iteration[200/391] Loss: 0.0769 Acc:97.42%
+Training: Epoch[105/190] Iteration[250/391] Loss: 0.0751 Acc:97.48%
+Training: Epoch[105/190] Iteration[300/391] Loss: 0.0757 Acc:97.43%
+Training: Epoch[105/190] Iteration[350/391] Loss: 0.0737 Acc:97.49%
+Epoch[105/190] Train Acc: 97.48% Valid Acc:91.30% Train loss:0.0738 Valid loss:0.3212 LR:0.01
+Training: Epoch[106/190] Iteration[050/391] Loss: 0.0755 Acc:97.38%
+Training: Epoch[106/190] Iteration[100/391] Loss: 0.0686 Acc:97.61%
+Training: Epoch[106/190] Iteration[150/391] Loss: 0.0711 Acc:97.59%
+Training: Epoch[106/190] Iteration[200/391] Loss: 0.0714 Acc:97.54%
+Training: Epoch[106/190] Iteration[250/391] Loss: 0.0703 Acc:97.58%
+Training: Epoch[106/190] Iteration[300/391] Loss: 0.0707 Acc:97.53%
+Training: Epoch[106/190] Iteration[350/391] Loss: 0.0699 Acc:97.55%
+Epoch[106/190] Train Acc: 97.53% Valid Acc:91.23% Train loss:0.0701 Valid loss:0.3292 LR:0.01
+Training: Epoch[107/190] Iteration[050/391] Loss: 0.0661 Acc:97.73%
+Training: Epoch[107/190] Iteration[100/391] Loss: 0.0700 Acc:97.56%
+Training: Epoch[107/190] Iteration[150/391] Loss: 0.0688 Acc:97.64%
+Training: Epoch[107/190] Iteration[200/391] Loss: 0.0683 Acc:97.66%
+Training: Epoch[107/190] Iteration[250/391] Loss: 0.0675 Acc:97.72%
+Training: Epoch[107/190] Iteration[300/391] Loss: 0.0667 Acc:97.73%
+Training: Epoch[107/190] Iteration[350/391] Loss: 0.0665 Acc:97.72%
+Epoch[107/190] Train Acc: 97.71% Valid Acc:91.23% Train loss:0.0670 Valid loss:0.3316 LR:0.01
+Training: Epoch[108/190] Iteration[050/391] Loss: 0.0582 Acc:97.70%
+Training: Epoch[108/190] Iteration[100/391] Loss: 0.0582 Acc:97.80%
+Training: Epoch[108/190] Iteration[150/391] Loss: 0.0598 Acc:97.83%
+Training: Epoch[108/190] Iteration[200/391] Loss: 0.0628 Acc:97.76%
+Training: Epoch[108/190] Iteration[250/391] Loss: 0.0640 Acc:97.77%
+Training: Epoch[108/190] Iteration[300/391] Loss: 0.0637 Acc:97.79%
+Training: Epoch[108/190] Iteration[350/391] Loss: 0.0637 Acc:97.78%
+Epoch[108/190] Train Acc: 97.76% Valid Acc:91.15% Train loss:0.0645 Valid loss:0.3350 LR:0.01
+Training: Epoch[109/190] Iteration[050/391] Loss: 0.0659 Acc:97.84%
+Training: Epoch[109/190] Iteration[100/391] Loss: 0.0644 Acc:97.80%
+Training: Epoch[109/190] Iteration[150/391] Loss: 0.0641 Acc:97.82%
+Training: Epoch[109/190] Iteration[200/391] Loss: 0.0633 Acc:97.85%
+Training: Epoch[109/190] Iteration[250/391] Loss: 0.0642 Acc:97.81%
+Training: Epoch[109/190] Iteration[300/391] Loss: 0.0642 Acc:97.82%
+Training: Epoch[109/190] Iteration[350/391] Loss: 0.0642 Acc:97.81%
+Epoch[109/190] Train Acc: 97.82% Valid Acc:91.21% Train loss:0.0638 Valid loss:0.3293 LR:0.01
+Training: Epoch[110/190] Iteration[050/391] Loss: 0.0647 Acc:97.81%
+Training: Epoch[110/190] Iteration[100/391] Loss: 0.0609 Acc:97.91%
+Training: Epoch[110/190] Iteration[150/391] Loss: 0.0609 Acc:97.94%
+Training: Epoch[110/190] Iteration[200/391] Loss: 0.0624 Acc:97.87%
+Training: Epoch[110/190] Iteration[250/391] Loss: 0.0636 Acc:97.82%
+Training: Epoch[110/190] Iteration[300/391] Loss: 0.0646 Acc:97.77%
+Training: Epoch[110/190] Iteration[350/391] Loss: 0.0644 Acc:97.78%
+Epoch[110/190] Train Acc: 97.81% Valid Acc:91.16% Train loss:0.0644 Valid loss:0.3399 LR:0.01
+Training: Epoch[111/190] Iteration[050/391] Loss: 0.0619 Acc:97.89%
+Training: Epoch[111/190] Iteration[100/391] Loss: 0.0599 Acc:97.91%
+Training: Epoch[111/190] Iteration[150/391] Loss: 0.0592 Acc:97.93%
+Training: Epoch[111/190] Iteration[200/391] Loss: 0.0615 Acc:97.84%
+Training: Epoch[111/190] Iteration[250/391] Loss: 0.0607 Acc:97.86%
+Training: Epoch[111/190] Iteration[300/391] Loss: 0.0609 Acc:97.83%
+Training: Epoch[111/190] Iteration[350/391] Loss: 0.0610 Acc:97.84%
+Epoch[111/190] Train Acc: 97.83% Valid Acc:91.11% Train loss:0.0612 Valid loss:0.3423 LR:0.01
+Training: Epoch[112/190] Iteration[050/391] Loss: 0.0602 Acc:97.78%
+Training: Epoch[112/190] Iteration[100/391] Loss: 0.0590 Acc:97.88%
+Training: Epoch[112/190] Iteration[150/391] Loss: 0.0628 Acc:97.79%
+Training: Epoch[112/190] Iteration[200/391] Loss: 0.0618 Acc:97.82%
+Training: Epoch[112/190] Iteration[250/391] Loss: 0.0594 Acc:97.90%
+Training: Epoch[112/190] Iteration[300/391] Loss: 0.0587 Acc:97.93%
+Training: Epoch[112/190] Iteration[350/391] Loss: 0.0585 Acc:97.94%
+Epoch[112/190] Train Acc: 97.95% Valid Acc:91.24% Train loss:0.0585 Valid loss:0.3419 LR:0.01
+Training: Epoch[113/190] Iteration[050/391] Loss: 0.0615 Acc:97.84%
+Training: Epoch[113/190] Iteration[100/391] Loss: 0.0564 Acc:98.08%
+Training: Epoch[113/190] Iteration[150/391] Loss: 0.0569 Acc:98.04%
+Training: Epoch[113/190] Iteration[200/391] Loss: 0.0565 Acc:98.04%
+Training: Epoch[113/190] Iteration[250/391] Loss: 0.0581 Acc:97.98%
+Training: Epoch[113/190] Iteration[300/391] Loss: 0.0591 Acc:97.93%
+Training: Epoch[113/190] Iteration[350/391] Loss: 0.0592 Acc:97.92%
+Epoch[113/190] Train Acc: 97.93% Valid Acc:91.16% Train loss:0.0589 Valid loss:0.3528 LR:0.01
+Training: Epoch[114/190] Iteration[050/391] Loss: 0.0536 Acc:97.95%
+Training: Epoch[114/190] Iteration[100/391] Loss: 0.0566 Acc:97.93%
+Training: Epoch[114/190] Iteration[150/391] Loss: 0.0582 Acc:97.90%
+Training: Epoch[114/190] Iteration[200/391] Loss: 0.0577 Acc:97.92%
+Training: Epoch[114/190] Iteration[250/391] Loss: 0.0554 Acc:98.03%
+Training: Epoch[114/190] Iteration[300/391] Loss: 0.0552 Acc:98.05%
+Training: Epoch[114/190] Iteration[350/391] Loss: 0.0551 Acc:98.06%
+Epoch[114/190] Train Acc: 98.02% Valid Acc:91.25% Train loss:0.0556 Valid loss:0.3514 LR:0.01
+Training: Epoch[115/190] Iteration[050/391] Loss: 0.0555 Acc:98.12%
+Training: Epoch[115/190] Iteration[100/391] Loss: 0.0539 Acc:98.05%
+Training: Epoch[115/190] Iteration[150/391] Loss: 0.0560 Acc:98.08%
+Training: Epoch[115/190] Iteration[200/391] Loss: 0.0545 Acc:98.13%
+Training: Epoch[115/190] Iteration[250/391] Loss: 0.0541 Acc:98.13%
+Training: Epoch[115/190] Iteration[300/391] Loss: 0.0554 Acc:98.12%
+Training: Epoch[115/190] Iteration[350/391] Loss: 0.0549 Acc:98.13%
+Epoch[115/190] Train Acc: 98.11% Valid Acc:91.18% Train loss:0.0556 Valid loss:0.3429 LR:0.01
+Training: Epoch[116/190] Iteration[050/391] Loss: 0.0524 Acc:98.12%
+Training: Epoch[116/190] Iteration[100/391] Loss: 0.0492 Acc:98.21%
+Training: Epoch[116/190] Iteration[150/391] Loss: 0.0517 Acc:98.15%
+Training: Epoch[116/190] Iteration[200/391] Loss: 0.0524 Acc:98.06%
+Training: Epoch[116/190] Iteration[250/391] Loss: 0.0516 Acc:98.11%
+Training: Epoch[116/190] Iteration[300/391] Loss: 0.0524 Acc:98.07%
+Training: Epoch[116/190] Iteration[350/391] Loss: 0.0520 Acc:98.08%
+Epoch[116/190] Train Acc: 98.07% Valid Acc:91.19% Train loss:0.0523 Valid loss:0.3522 LR:0.01
+Training: Epoch[117/190] Iteration[050/391] Loss: 0.0556 Acc:98.12%
+Training: Epoch[117/190] Iteration[100/391] Loss: 0.0541 Acc:98.11%
+Training: Epoch[117/190] Iteration[150/391] Loss: 0.0533 Acc:98.11%
+Training: Epoch[117/190] Iteration[200/391] Loss: 0.0529 Acc:98.15%
+Training: Epoch[117/190] Iteration[250/391] Loss: 0.0528 Acc:98.16%
+Training: Epoch[117/190] Iteration[300/391] Loss: 0.0532 Acc:98.13%
+Training: Epoch[117/190] Iteration[350/391] Loss: 0.0531 Acc:98.16%
+Epoch[117/190] Train Acc: 98.16% Valid Acc:91.22% Train loss:0.0526 Valid loss:0.3572 LR:0.01
+Training: Epoch[118/190] Iteration[050/391] Loss: 0.0435 Acc:98.44%
+Training: Epoch[118/190] Iteration[100/391] Loss: 0.0456 Acc:98.29%
+Training: Epoch[118/190] Iteration[150/391] Loss: 0.0481 Acc:98.29%
+Training: Epoch[118/190] Iteration[200/391] Loss: 0.0484 Acc:98.34%
+Training: Epoch[118/190] Iteration[250/391] Loss: 0.0485 Acc:98.32%
+Training: Epoch[118/190] Iteration[300/391] Loss: 0.0493 Acc:98.31%
+Training: Epoch[118/190] Iteration[350/391] Loss: 0.0487 Acc:98.32%
+Epoch[118/190] Train Acc: 98.28% Valid Acc:91.30% Train loss:0.0494 Valid loss:0.3574 LR:0.01
+Training: Epoch[119/190] Iteration[050/391] Loss: 0.0490 Acc:98.14%
+Training: Epoch[119/190] Iteration[100/391] Loss: 0.0461 Acc:98.36%
+Training: Epoch[119/190] Iteration[150/391] Loss: 0.0430 Acc:98.52%
+Training: Epoch[119/190] Iteration[200/391] Loss: 0.0442 Acc:98.49%
+Training: Epoch[119/190] Iteration[250/391] Loss: 0.0451 Acc:98.42%
+Training: Epoch[119/190] Iteration[300/391] Loss: 0.0448 Acc:98.43%
+Training: Epoch[119/190] Iteration[350/391] Loss: 0.0461 Acc:98.39%
+Epoch[119/190] Train Acc: 98.36% Valid Acc:91.14% Train loss:0.0467 Valid loss:0.3666 LR:0.01
+Training: Epoch[120/190] Iteration[050/391] Loss: 0.0469 Acc:98.38%
+Training: Epoch[120/190] Iteration[100/391] Loss: 0.0436 Acc:98.45%
+Training: Epoch[120/190] Iteration[150/391] Loss: 0.0446 Acc:98.40%
+Training: Epoch[120/190] Iteration[200/391] Loss: 0.0458 Acc:98.34%
+Training: Epoch[120/190] Iteration[250/391] Loss: 0.0462 Acc:98.32%
+Training: Epoch[120/190] Iteration[300/391] Loss: 0.0464 Acc:98.34%
+Training: Epoch[120/190] Iteration[350/391] Loss: 0.0482 Acc:98.29%
+Epoch[120/190] Train Acc: 98.30% Valid Acc:91.20% Train loss:0.0479 Valid loss:0.3680 LR:0.01
+Training: Epoch[121/190] Iteration[050/391] Loss: 0.0389 Acc:98.67%
+Training: Epoch[121/190] Iteration[100/391] Loss: 0.0423 Acc:98.54%
+Training: Epoch[121/190] Iteration[150/391] Loss: 0.0443 Acc:98.47%
+Training: Epoch[121/190] Iteration[200/391] Loss: 0.0439 Acc:98.50%
+Training: Epoch[121/190] Iteration[250/391] Loss: 0.0460 Acc:98.44%
+Training: Epoch[121/190] Iteration[300/391] Loss: 0.0466 Acc:98.42%
+Training: Epoch[121/190] Iteration[350/391] Loss: 0.0464 Acc:98.40%
+Epoch[121/190] Train Acc: 98.36% Valid Acc:91.27% Train loss:0.0470 Valid loss:0.3680 LR:0.01
+Training: Epoch[122/190] Iteration[050/391] Loss: 0.0422 Acc:98.48%
+Training: Epoch[122/190] Iteration[100/391] Loss: 0.0445 Acc:98.46%
+Training: Epoch[122/190] Iteration[150/391] Loss: 0.0441 Acc:98.47%
+Training: Epoch[122/190] Iteration[200/391] Loss: 0.0461 Acc:98.38%
+Training: Epoch[122/190] Iteration[250/391] Loss: 0.0464 Acc:98.43%
+Training: Epoch[122/190] Iteration[300/391] Loss: 0.0463 Acc:98.43%
+Training: Epoch[122/190] Iteration[350/391] Loss: 0.0477 Acc:98.39%
+Epoch[122/190] Train Acc: 98.36% Valid Acc:91.29% Train loss:0.0479 Valid loss:0.3559 LR:0.01
+Training: Epoch[123/190] Iteration[050/391] Loss: 0.0429 Acc:98.47%
+Training: Epoch[123/190] Iteration[100/391] Loss: 0.0430 Acc:98.49%
+Training: Epoch[123/190] Iteration[150/391] Loss: 0.0441 Acc:98.40%
+Training: Epoch[123/190] Iteration[200/391] Loss: 0.0445 Acc:98.41%
+Training: Epoch[123/190] Iteration[250/391] Loss: 0.0450 Acc:98.39%
+Training: Epoch[123/190] Iteration[300/391] Loss: 0.0453 Acc:98.40%
+Training: Epoch[123/190] Iteration[350/391] Loss: 0.0453 Acc:98.39%
+Epoch[123/190] Train Acc: 98.42% Valid Acc:91.28% Train loss:0.0447 Valid loss:0.3649 LR:0.01
+Training: Epoch[124/190] Iteration[050/391] Loss: 0.0479 Acc:98.23%
+Training: Epoch[124/190] Iteration[100/391] Loss: 0.0430 Acc:98.41%
+Training: Epoch[124/190] Iteration[150/391] Loss: 0.0427 Acc:98.46%
+Training: Epoch[124/190] Iteration[200/391] Loss: 0.0443 Acc:98.41%
+Training: Epoch[124/190] Iteration[250/391] Loss: 0.0440 Acc:98.45%
+Training: Epoch[124/190] Iteration[300/391] Loss: 0.0431 Acc:98.49%
+Training: Epoch[124/190] Iteration[350/391] Loss: 0.0435 Acc:98.48%
+Epoch[124/190] Train Acc: 98.46% Valid Acc:91.16% Train loss:0.0441 Valid loss:0.3634 LR:0.01
+Training: Epoch[125/190] Iteration[050/391] Loss: 0.0507 Acc:98.19%
+Training: Epoch[125/190] Iteration[100/391] Loss: 0.0468 Acc:98.34%
+Training: Epoch[125/190] Iteration[150/391] Loss: 0.0462 Acc:98.39%
+Training: Epoch[125/190] Iteration[200/391] Loss: 0.0450 Acc:98.41%
+Training: Epoch[125/190] Iteration[250/391] Loss: 0.0459 Acc:98.40%
+Training: Epoch[125/190] Iteration[300/391] Loss: 0.0461 Acc:98.38%
+Training: Epoch[125/190] Iteration[350/391] Loss: 0.0463 Acc:98.38%
+Epoch[125/190] Train Acc: 98.37% Valid Acc:91.18% Train loss:0.0461 Valid loss:0.3634 LR:0.01
+Training: Epoch[126/190] Iteration[050/391] Loss: 0.0393 Acc:98.67%
+Training: Epoch[126/190] Iteration[100/391] Loss: 0.0418 Acc:98.59%
+Training: Epoch[126/190] Iteration[150/391] Loss: 0.0420 Acc:98.58%
+Training: Epoch[126/190] Iteration[200/391] Loss: 0.0420 Acc:98.57%
+Training: Epoch[126/190] Iteration[250/391] Loss: 0.0425 Acc:98.54%
+Training: Epoch[126/190] Iteration[300/391] Loss: 0.0425 Acc:98.52%
+Training: Epoch[126/190] Iteration[350/391] Loss: 0.0424 Acc:98.51%
+Epoch[126/190] Train Acc: 98.49% Valid Acc:91.35% Train loss:0.0426 Valid loss:0.3622 LR:0.01
+Training: Epoch[127/190] Iteration[050/391] Loss: 0.0376 Acc:98.73%
+Training: Epoch[127/190] Iteration[100/391] Loss: 0.0385 Acc:98.72%
+Training: Epoch[127/190] Iteration[150/391] Loss: 0.0408 Acc:98.61%
+Training: Epoch[127/190] Iteration[200/391] Loss: 0.0420 Acc:98.59%
+Training: Epoch[127/190] Iteration[250/391] Loss: 0.0434 Acc:98.51%
+Training: Epoch[127/190] Iteration[300/391] Loss: 0.0428 Acc:98.53%
+Training: Epoch[127/190] Iteration[350/391] Loss: 0.0424 Acc:98.53%
+Epoch[127/190] Train Acc: 98.55% Valid Acc:91.15% Train loss:0.0421 Valid loss:0.3759 LR:0.01
+Training: Epoch[128/190] Iteration[050/391] Loss: 0.0385 Acc:98.80%
+Training: Epoch[128/190] Iteration[100/391] Loss: 0.0432 Acc:98.55%
+Training: Epoch[128/190] Iteration[150/391] Loss: 0.0427 Acc:98.55%
+Training: Epoch[128/190] Iteration[200/391] Loss: 0.0420 Acc:98.57%
+Training: Epoch[128/190] Iteration[250/391] Loss: 0.0416 Acc:98.60%
+Training: Epoch[128/190] Iteration[300/391] Loss: 0.0425 Acc:98.53%
+Training: Epoch[128/190] Iteration[350/391] Loss: 0.0426 Acc:98.54%
+Epoch[128/190] Train Acc: 98.57% Valid Acc:91.40% Train loss:0.0420 Valid loss:0.3671 LR:0.01
+Training: Epoch[129/190] Iteration[050/391] Loss: 0.0452 Acc:98.34%
+Training: Epoch[129/190] Iteration[100/391] Loss: 0.0419 Acc:98.55%
+Training: Epoch[129/190] Iteration[150/391] Loss: 0.0417 Acc:98.50%
+Training: Epoch[129/190] Iteration[200/391] Loss: 0.0415 Acc:98.52%
+Training: Epoch[129/190] Iteration[250/391] Loss: 0.0407 Acc:98.52%
+Training: Epoch[129/190] Iteration[300/391] Loss: 0.0413 Acc:98.51%
+Training: Epoch[129/190] Iteration[350/391] Loss: 0.0408 Acc:98.54%
+Epoch[129/190] Train Acc: 98.55% Valid Acc:91.32% Train loss:0.0406 Valid loss:0.3643 LR:0.01
+Training: Epoch[130/190] Iteration[050/391] Loss: 0.0395 Acc:98.66%
+Training: Epoch[130/190] Iteration[100/391] Loss: 0.0397 Acc:98.66%
+Training: Epoch[130/190] Iteration[150/391] Loss: 0.0417 Acc:98.56%
+Training: Epoch[130/190] Iteration[200/391] Loss: 0.0418 Acc:98.54%
+Training: Epoch[130/190] Iteration[250/391] Loss: 0.0413 Acc:98.56%
+Training: Epoch[130/190] Iteration[300/391] Loss: 0.0403 Acc:98.60%
+Training: Epoch[130/190] Iteration[350/391] Loss: 0.0409 Acc:98.58%
+Epoch[130/190] Train Acc: 98.56% Valid Acc:91.24% Train loss:0.0416 Valid loss:0.3766 LR:0.01
+Training: Epoch[131/190] Iteration[050/391] Loss: 0.0382 Acc:98.73%
+Training: Epoch[131/190] Iteration[100/391] Loss: 0.0369 Acc:98.66%
+Training: Epoch[131/190] Iteration[150/391] Loss: 0.0384 Acc:98.65%
+Training: Epoch[131/190] Iteration[200/391] Loss: 0.0390 Acc:98.64%
+Training: Epoch[131/190] Iteration[250/391] Loss: 0.0387 Acc:98.61%
+Training: Epoch[131/190] Iteration[300/391] Loss: 0.0377 Acc:98.65%
+Training: Epoch[131/190] Iteration[350/391] Loss: 0.0385 Acc:98.60%
+Epoch[131/190] Train Acc: 98.61% Valid Acc:91.27% Train loss:0.0391 Valid loss:0.3696 LR:0.01
+Training: Epoch[132/190] Iteration[050/391] Loss: 0.0421 Acc:98.38%
+Training: Epoch[132/190] Iteration[100/391] Loss: 0.0436 Acc:98.45%
+Training: Epoch[132/190] Iteration[150/391] Loss: 0.0437 Acc:98.48%
+Training: Epoch[132/190] Iteration[200/391] Loss: 0.0426 Acc:98.53%
+Training: Epoch[132/190] Iteration[250/391] Loss: 0.0425 Acc:98.52%
+Training: Epoch[132/190] Iteration[300/391] Loss: 0.0422 Acc:98.53%
+Training: Epoch[132/190] Iteration[350/391] Loss: 0.0420 Acc:98.53%
+Epoch[132/190] Train Acc: 98.55% Valid Acc:91.16% Train loss:0.0414 Valid loss:0.3779 LR:0.01
+Training: Epoch[133/190] Iteration[050/391] Loss: 0.0387 Acc:98.75%
+Training: Epoch[133/190] Iteration[100/391] Loss: 0.0391 Acc:98.67%
+Training: Epoch[133/190] Iteration[150/391] Loss: 0.0400 Acc:98.62%
+Training: Epoch[133/190] Iteration[200/391] Loss: 0.0393 Acc:98.64%
+Training: Epoch[133/190] Iteration[250/391] Loss: 0.0386 Acc:98.68%
+Training: Epoch[133/190] Iteration[300/391] Loss: 0.0385 Acc:98.69%
+Training: Epoch[133/190] Iteration[350/391] Loss: 0.0390 Acc:98.66%
+Epoch[133/190] Train Acc: 98.70% Valid Acc:91.31% Train loss:0.0381 Valid loss:0.3750 LR:0.01
+Training: Epoch[134/190] Iteration[050/391] Loss: 0.0316 Acc:98.91%
+Training: Epoch[134/190] Iteration[100/391] Loss: 0.0371 Acc:98.70%
+Training: Epoch[134/190] Iteration[150/391] Loss: 0.0402 Acc:98.59%
+Training: Epoch[134/190] Iteration[200/391] Loss: 0.0398 Acc:98.61%
+Training: Epoch[134/190] Iteration[250/391] Loss: 0.0396 Acc:98.61%
+Training: Epoch[134/190] Iteration[300/391] Loss: 0.0388 Acc:98.63%
+Training: Epoch[134/190] Iteration[350/391] Loss: 0.0396 Acc:98.59%
+Epoch[134/190] Train Acc: 98.58% Valid Acc:91.08% Train loss:0.0403 Valid loss:0.3810 LR:0.01
+Training: Epoch[135/190] Iteration[050/391] Loss: 0.0370 Acc:98.70%
+Training: Epoch[135/190] Iteration[100/391] Loss: 0.0361 Acc:98.74%
+Training: Epoch[135/190] Iteration[150/391] Loss: 0.0374 Acc:98.67%
+Training: Epoch[135/190] Iteration[200/391] Loss: 0.0365 Acc:98.69%
+Training: Epoch[135/190] Iteration[250/391] Loss: 0.0368 Acc:98.69%
+Training: Epoch[135/190] Iteration[300/391] Loss: 0.0374 Acc:98.66%
+Training: Epoch[135/190] Iteration[350/391] Loss: 0.0381 Acc:98.63%
+Epoch[135/190] Train Acc: 98.61% Valid Acc:91.26% Train loss:0.0388 Valid loss:0.3827 LR:0.01
+Training: Epoch[136/190] Iteration[050/391] Loss: 0.0382 Acc:98.70%
+Training: Epoch[136/190] Iteration[100/391] Loss: 0.0356 Acc:98.78%
+Training: Epoch[136/190] Iteration[150/391] Loss: 0.0361 Acc:98.72%
+Training: Epoch[136/190] Iteration[200/391] Loss: 0.0373 Acc:98.65%
+Training: Epoch[136/190] Iteration[250/391] Loss: 0.0376 Acc:98.66%
+Training: Epoch[136/190] Iteration[300/391] Loss: 0.0375 Acc:98.66%
+Training: Epoch[136/190] Iteration[350/391] Loss: 0.0375 Acc:98.67%
+Epoch[136/190] Train Acc: 98.68% Valid Acc:91.32% Train loss:0.0377 Valid loss:0.3834 LR:0.01
+Training: Epoch[137/190] Iteration[050/391] Loss: 0.0300 Acc:98.92%
+Training: Epoch[137/190] Iteration[100/391] Loss: 0.0327 Acc:98.88%
+Training: Epoch[137/190] Iteration[150/391] Loss: 0.0327 Acc:98.90%
+Training: Epoch[137/190] Iteration[200/391] Loss: 0.0332 Acc:98.84%
+Training: Epoch[137/190] Iteration[250/391] Loss: 0.0332 Acc:98.85%
+Training: Epoch[137/190] Iteration[300/391] Loss: 0.0334 Acc:98.86%
+Training: Epoch[137/190] Iteration[350/391] Loss: 0.0338 Acc:98.85%
+Epoch[137/190] Train Acc: 98.84% Valid Acc:91.34% Train loss:0.0345 Valid loss:0.3816 LR:0.01
+Training: Epoch[138/190] Iteration[050/391] Loss: 0.0330 Acc:98.83%
+Training: Epoch[138/190] Iteration[100/391] Loss: 0.0327 Acc:98.85%
+Training: Epoch[138/190] Iteration[150/391] Loss: 0.0320 Acc:98.90%
+Training: Epoch[138/190] Iteration[200/391] Loss: 0.0310 Acc:98.93%
+Training: Epoch[138/190] Iteration[250/391] Loss: 0.0303 Acc:98.96%
+Training: Epoch[138/190] Iteration[300/391] Loss: 0.0296 Acc:98.98%
+Training: Epoch[138/190] Iteration[350/391] Loss: 0.0294 Acc:99.00%
+Epoch[138/190] Train Acc: 98.97% Valid Acc:91.62% Train loss:0.0299 Valid loss:0.3709 LR:0.001
+Training: Epoch[139/190] Iteration[050/391] Loss: 0.0321 Acc:98.83%
+Training: Epoch[139/190] Iteration[100/391] Loss: 0.0282 Acc:98.95%
+Training: Epoch[139/190] Iteration[150/391] Loss: 0.0278 Acc:98.98%
+Training: Epoch[139/190] Iteration[200/391] Loss: 0.0290 Acc:98.97%
+Training: Epoch[139/190] Iteration[250/391] Loss: 0.0286 Acc:99.01%
+Training: Epoch[139/190] Iteration[300/391] Loss: 0.0286 Acc:99.01%
+Training: Epoch[139/190] Iteration[350/391] Loss: 0.0287 Acc:99.00%
+Epoch[139/190] Train Acc: 99.03% Valid Acc:91.66% Train loss:0.0282 Valid loss:0.3716 LR:0.001
+Training: Epoch[140/190] Iteration[050/391] Loss: 0.0287 Acc:98.89%
+Training: Epoch[140/190] Iteration[100/391] Loss: 0.0274 Acc:98.99%
+Training: Epoch[140/190] Iteration[150/391] Loss: 0.0270 Acc:99.01%
+Training: Epoch[140/190] Iteration[200/391] Loss: 0.0271 Acc:99.02%
+Training: Epoch[140/190] Iteration[250/391] Loss: 0.0269 Acc:99.03%
+Training: Epoch[140/190] Iteration[300/391] Loss: 0.0268 Acc:99.06%
+Training: Epoch[140/190] Iteration[350/391] Loss: 0.0264 Acc:99.08%
+Epoch[140/190] Train Acc: 99.07% Valid Acc:91.85% Train loss:0.0265 Valid loss:0.3779 LR:0.001
+Training: Epoch[141/190] Iteration[050/391] Loss: 0.0248 Acc:99.36%
+Training: Epoch[141/190] Iteration[100/391] Loss: 0.0248 Acc:99.23%
+Training: Epoch[141/190] Iteration[150/391] Loss: 0.0241 Acc:99.22%
+Training: Epoch[141/190] Iteration[200/391] Loss: 0.0241 Acc:99.21%
+Training: Epoch[141/190] Iteration[250/391] Loss: 0.0252 Acc:99.15%
+Training: Epoch[141/190] Iteration[300/391] Loss: 0.0249 Acc:99.15%
+Training: Epoch[141/190] Iteration[350/391] Loss: 0.0249 Acc:99.17%
+Epoch[141/190] Train Acc: 99.17% Valid Acc:91.70% Train loss:0.0252 Valid loss:0.3746 LR:0.001
+Training: Epoch[142/190] Iteration[050/391] Loss: 0.0291 Acc:98.94%
+Training: Epoch[142/190] Iteration[100/391] Loss: 0.0275 Acc:99.05%
+Training: Epoch[142/190] Iteration[150/391] Loss: 0.0248 Acc:99.16%
+Training: Epoch[142/190] Iteration[200/391] Loss: 0.0240 Acc:99.18%
+Training: Epoch[142/190] Iteration[250/391] Loss: 0.0247 Acc:99.16%
+Training: Epoch[142/190] Iteration[300/391] Loss: 0.0241 Acc:99.18%
+Training: Epoch[142/190] Iteration[350/391] Loss: 0.0237 Acc:99.19%
+Epoch[142/190] Train Acc: 99.19% Valid Acc:91.68% Train loss:0.0233 Valid loss:0.3772 LR:0.001
+Training: Epoch[143/190] Iteration[050/391] Loss: 0.0291 Acc:98.95%
+Training: Epoch[143/190] Iteration[100/391] Loss: 0.0281 Acc:98.95%
+Training: Epoch[143/190] Iteration[150/391] Loss: 0.0260 Acc:99.03%
+Training: Epoch[143/190] Iteration[200/391] Loss: 0.0250 Acc:99.08%
+Training: Epoch[143/190] Iteration[250/391] Loss: 0.0242 Acc:99.12%
+Training: Epoch[143/190] Iteration[300/391] Loss: 0.0243 Acc:99.13%
+Training: Epoch[143/190] Iteration[350/391] Loss: 0.0243 Acc:99.13%
+Epoch[143/190] Train Acc: 99.13% Valid Acc:91.72% Train loss:0.0245 Valid loss:0.3782 LR:0.001
+Training: Epoch[144/190] Iteration[050/391] Loss: 0.0228 Acc:99.27%
+Training: Epoch[144/190] Iteration[100/391] Loss: 0.0258 Acc:99.17%
+Training: Epoch[144/190] Iteration[150/391] Loss: 0.0227 Acc:99.27%
+Training: Epoch[144/190] Iteration[200/391] Loss: 0.0224 Acc:99.25%
+Training: Epoch[144/190] Iteration[250/391] Loss: 0.0222 Acc:99.26%
+Training: Epoch[144/190] Iteration[300/391] Loss: 0.0224 Acc:99.26%
+Training: Epoch[144/190] Iteration[350/391] Loss: 0.0224 Acc:99.24%
+Epoch[144/190] Train Acc: 99.27% Valid Acc:91.78% Train loss:0.0217 Valid loss:0.3771 LR:0.001
+Training: Epoch[145/190] Iteration[050/391] Loss: 0.0243 Acc:99.30%
+Training: Epoch[145/190] Iteration[100/391] Loss: 0.0229 Acc:99.27%
+Training: Epoch[145/190] Iteration[150/391] Loss: 0.0236 Acc:99.19%
+Training: Epoch[145/190] Iteration[200/391] Loss: 0.0233 Acc:99.22%
+Training: Epoch[145/190] Iteration[250/391] Loss: 0.0229 Acc:99.22%
+Training: Epoch[145/190] Iteration[300/391] Loss: 0.0224 Acc:99.22%
+Training: Epoch[145/190] Iteration[350/391] Loss: 0.0223 Acc:99.23%
+Epoch[145/190] Train Acc: 99.21% Valid Acc:91.69% Train loss:0.0228 Valid loss:0.3820 LR:0.001
+Training: Epoch[146/190] Iteration[050/391] Loss: 0.0188 Acc:99.39%
+Training: Epoch[146/190] Iteration[100/391] Loss: 0.0203 Acc:99.36%
+Training: Epoch[146/190] Iteration[150/391] Loss: 0.0211 Acc:99.38%
+Training: Epoch[146/190] Iteration[200/391] Loss: 0.0217 Acc:99.34%
+Training: Epoch[146/190] Iteration[250/391] Loss: 0.0220 Acc:99.31%
+Training: Epoch[146/190] Iteration[300/391] Loss: 0.0223 Acc:99.28%
+Training: Epoch[146/190] Iteration[350/391] Loss: 0.0221 Acc:99.28%
+Epoch[146/190] Train Acc: 99.29% Valid Acc:91.78% Train loss:0.0218 Valid loss:0.3817 LR:0.001
+Training: Epoch[147/190] Iteration[050/391] Loss: 0.0236 Acc:99.20%
+Training: Epoch[147/190] Iteration[100/391] Loss: 0.0206 Acc:99.31%
+Training: Epoch[147/190] Iteration[150/391] Loss: 0.0217 Acc:99.30%
+Training: Epoch[147/190] Iteration[200/391] Loss: 0.0226 Acc:99.24%
+Training: Epoch[147/190] Iteration[250/391] Loss: 0.0229 Acc:99.24%
+Training: Epoch[147/190] Iteration[300/391] Loss: 0.0233 Acc:99.22%
+Training: Epoch[147/190] Iteration[350/391] Loss: 0.0231 Acc:99.23%
+Epoch[147/190] Train Acc: 99.23% Valid Acc:91.84% Train loss:0.0232 Valid loss:0.3809 LR:0.001
+Training: Epoch[148/190] Iteration[050/391] Loss: 0.0182 Acc:99.44%
+Training: Epoch[148/190] Iteration[100/391] Loss: 0.0190 Acc:99.41%
+Training: Epoch[148/190] Iteration[150/391] Loss: 0.0201 Acc:99.39%
+Training: Epoch[148/190] Iteration[200/391] Loss: 0.0214 Acc:99.32%
+Training: Epoch[148/190] Iteration[250/391] Loss: 0.0216 Acc:99.28%
+Training: Epoch[148/190] Iteration[300/391] Loss: 0.0217 Acc:99.28%
+Training: Epoch[148/190] Iteration[350/391] Loss: 0.0216 Acc:99.28%
+Epoch[148/190] Train Acc: 99.29% Valid Acc:91.79% Train loss:0.0215 Valid loss:0.3809 LR:0.001
+Training: Epoch[149/190] Iteration[050/391] Loss: 0.0189 Acc:99.38%
+Training: Epoch[149/190] Iteration[100/391] Loss: 0.0178 Acc:99.41%
+Training: Epoch[149/190] Iteration[150/391] Loss: 0.0197 Acc:99.34%
+Training: Epoch[149/190] Iteration[200/391] Loss: 0.0194 Acc:99.35%
+Training: Epoch[149/190] Iteration[250/391] Loss: 0.0200 Acc:99.32%
+Training: Epoch[149/190] Iteration[300/391] Loss: 0.0203 Acc:99.30%
+Training: Epoch[149/190] Iteration[350/391] Loss: 0.0205 Acc:99.30%
+Epoch[149/190] Train Acc: 99.33% Valid Acc:91.92% Train loss:0.0199 Valid loss:0.3825 LR:0.001
+Training: Epoch[150/190] Iteration[050/391] Loss: 0.0226 Acc:99.27%
+Training: Epoch[150/190] Iteration[100/391] Loss: 0.0199 Acc:99.34%
+Training: Epoch[150/190] Iteration[150/391] Loss: 0.0192 Acc:99.36%
+Training: Epoch[150/190] Iteration[200/391] Loss: 0.0188 Acc:99.37%
+Training: Epoch[150/190] Iteration[250/391] Loss: 0.0197 Acc:99.33%
+Training: Epoch[150/190] Iteration[300/391] Loss: 0.0198 Acc:99.32%
+Training: Epoch[150/190] Iteration[350/391] Loss: 0.0201 Acc:99.28%
+Epoch[150/190] Train Acc: 99.27% Valid Acc:91.87% Train loss:0.0200 Valid loss:0.3793 LR:0.001
+Training: Epoch[151/190] Iteration[050/391] Loss: 0.0260 Acc:99.12%
+Training: Epoch[151/190] Iteration[100/391] Loss: 0.0256 Acc:99.13%
+Training: Epoch[151/190] Iteration[150/391] Loss: 0.0242 Acc:99.18%
+Training: Epoch[151/190] Iteration[200/391] Loss: 0.0228 Acc:99.24%
+Training: Epoch[151/190] Iteration[250/391] Loss: 0.0219 Acc:99.26%
+Training: Epoch[151/190] Iteration[300/391] Loss: 0.0230 Acc:99.23%
+Training: Epoch[151/190] Iteration[350/391] Loss: 0.0226 Acc:99.24%
+Epoch[151/190] Train Acc: 99.26% Valid Acc:91.83% Train loss:0.0224 Valid loss:0.3812 LR:0.001
+Training: Epoch[152/190] Iteration[050/391] Loss: 0.0196 Acc:99.23%
+Training: Epoch[152/190] Iteration[100/391] Loss: 0.0196 Acc:99.27%
+Training: Epoch[152/190] Iteration[150/391] Loss: 0.0203 Acc:99.28%
+Training: Epoch[152/190] Iteration[200/391] Loss: 0.0195 Acc:99.36%
+Training: Epoch[152/190] Iteration[250/391] Loss: 0.0196 Acc:99.35%
+Training: Epoch[152/190] Iteration[300/391] Loss: 0.0191 Acc:99.36%
+Training: Epoch[152/190] Iteration[350/391] Loss: 0.0189 Acc:99.38%
+Epoch[152/190] Train Acc: 99.37% Valid Acc:91.93% Train loss:0.0191 Valid loss:0.3821 LR:0.001
+Training: Epoch[153/190] Iteration[050/391] Loss: 0.0202 Acc:99.25%
+Training: Epoch[153/190] Iteration[100/391] Loss: 0.0206 Acc:99.25%
+Training: Epoch[153/190] Iteration[150/391] Loss: 0.0217 Acc:99.21%
+Training: Epoch[153/190] Iteration[200/391] Loss: 0.0218 Acc:99.21%
+Training: Epoch[153/190] Iteration[250/391] Loss: 0.0213 Acc:99.23%
+Training: Epoch[153/190] Iteration[300/391] Loss: 0.0214 Acc:99.24%
+Training: Epoch[153/190] Iteration[350/391] Loss: 0.0212 Acc:99.24%
+Epoch[153/190] Train Acc: 99.26% Valid Acc:91.87% Train loss:0.0208 Valid loss:0.3886 LR:0.001
+Training: Epoch[154/190] Iteration[050/391] Loss: 0.0193 Acc:99.36%
+Training: Epoch[154/190] Iteration[100/391] Loss: 0.0200 Acc:99.33%
+Training: Epoch[154/190] Iteration[150/391] Loss: 0.0212 Acc:99.30%
+Training: Epoch[154/190] Iteration[200/391] Loss: 0.0213 Acc:99.33%
+Training: Epoch[154/190] Iteration[250/391] Loss: 0.0205 Acc:99.35%
+Training: Epoch[154/190] Iteration[300/391] Loss: 0.0210 Acc:99.34%
+Training: Epoch[154/190] Iteration[350/391] Loss: 0.0210 Acc:99.33%
+Epoch[154/190] Train Acc: 99.33% Valid Acc:91.92% Train loss:0.0208 Valid loss:0.3846 LR:0.001
+Training: Epoch[155/190] Iteration[050/391] Loss: 0.0207 Acc:99.34%
+Training: Epoch[155/190] Iteration[100/391] Loss: 0.0223 Acc:99.20%
+Training: Epoch[155/190] Iteration[150/391] Loss: 0.0215 Acc:99.24%
+Training: Epoch[155/190] Iteration[200/391] Loss: 0.0217 Acc:99.26%
+Training: Epoch[155/190] Iteration[250/391] Loss: 0.0207 Acc:99.28%
+Training: Epoch[155/190] Iteration[300/391] Loss: 0.0214 Acc:99.26%
+Training: Epoch[155/190] Iteration[350/391] Loss: 0.0210 Acc:99.28%
+Epoch[155/190] Train Acc: 99.27% Valid Acc:91.87% Train loss:0.0211 Valid loss:0.3859 LR:0.001
+Training: Epoch[156/190] Iteration[050/391] Loss: 0.0199 Acc:99.31%
+Training: Epoch[156/190] Iteration[100/391] Loss: 0.0178 Acc:99.41%
+Training: Epoch[156/190] Iteration[150/391] Loss: 0.0181 Acc:99.40%
+Training: Epoch[156/190] Iteration[200/391] Loss: 0.0187 Acc:99.36%
+Training: Epoch[156/190] Iteration[250/391] Loss: 0.0186 Acc:99.36%
+Training: Epoch[156/190] Iteration[300/391] Loss: 0.0193 Acc:99.33%
+Training: Epoch[156/190] Iteration[350/391] Loss: 0.0199 Acc:99.32%
+Epoch[156/190] Train Acc: 99.32% Valid Acc:91.91% Train loss:0.0198 Valid loss:0.3877 LR:0.001
+Training: Epoch[157/190] Iteration[050/391] Loss: 0.0226 Acc:99.14%
+Training: Epoch[157/190] Iteration[100/391] Loss: 0.0218 Acc:99.18%
+Training: Epoch[157/190] Iteration[150/391] Loss: 0.0220 Acc:99.18%
+Training: Epoch[157/190] Iteration[200/391] Loss: 0.0208 Acc:99.24%
+Training: Epoch[157/190] Iteration[250/391] Loss: 0.0198 Acc:99.27%
+Training: Epoch[157/190] Iteration[300/391] Loss: 0.0204 Acc:99.25%
+Training: Epoch[157/190] Iteration[350/391] Loss: 0.0204 Acc:99.26%
+Epoch[157/190] Train Acc: 99.28% Valid Acc:91.90% Train loss:0.0202 Valid loss:0.3873 LR:0.001
+Training: Epoch[158/190] Iteration[050/391] Loss: 0.0186 Acc:99.25%
+Training: Epoch[158/190] Iteration[100/391] Loss: 0.0210 Acc:99.25%
+Training: Epoch[158/190] Iteration[150/391] Loss: 0.0197 Acc:99.31%
+Training: Epoch[158/190] Iteration[200/391] Loss: 0.0204 Acc:99.31%
+Training: Epoch[158/190] Iteration[250/391] Loss: 0.0197 Acc:99.33%
+Training: Epoch[158/190] Iteration[300/391] Loss: 0.0198 Acc:99.31%
+Training: Epoch[158/190] Iteration[350/391] Loss: 0.0192 Acc:99.34%
+Epoch[158/190] Train Acc: 99.35% Valid Acc:91.82% Train loss:0.0189 Valid loss:0.3873 LR:0.001
+Training: Epoch[159/190] Iteration[050/391] Loss: 0.0176 Acc:99.36%
+Training: Epoch[159/190] Iteration[100/391] Loss: 0.0175 Acc:99.39%
+Training: Epoch[159/190] Iteration[150/391] Loss: 0.0189 Acc:99.34%
+Training: Epoch[159/190] Iteration[200/391] Loss: 0.0183 Acc:99.35%
+Training: Epoch[159/190] Iteration[250/391] Loss: 0.0184 Acc:99.34%
+Training: Epoch[159/190] Iteration[300/391] Loss: 0.0188 Acc:99.33%
+Training: Epoch[159/190] Iteration[350/391] Loss: 0.0191 Acc:99.31%
+Epoch[159/190] Train Acc: 99.31% Valid Acc:91.95% Train loss:0.0194 Valid loss:0.3880 LR:0.001
+Training: Epoch[160/190] Iteration[050/391] Loss: 0.0187 Acc:99.28%
+Training: Epoch[160/190] Iteration[100/391] Loss: 0.0184 Acc:99.31%
+Training: Epoch[160/190] Iteration[150/391] Loss: 0.0180 Acc:99.37%
+Training: Epoch[160/190] Iteration[200/391] Loss: 0.0180 Acc:99.36%
+Training: Epoch[160/190] Iteration[250/391] Loss: 0.0181 Acc:99.38%
+Training: Epoch[160/190] Iteration[300/391] Loss: 0.0176 Acc:99.41%
+Training: Epoch[160/190] Iteration[350/391] Loss: 0.0173 Acc:99.42%
+Epoch[160/190] Train Acc: 99.41% Valid Acc:91.86% Train loss:0.0176 Valid loss:0.3880 LR:0.001
+Training: Epoch[161/190] Iteration[050/391] Loss: 0.0165 Acc:99.47%
+Training: Epoch[161/190] Iteration[100/391] Loss: 0.0170 Acc:99.45%
+Training: Epoch[161/190] Iteration[150/391] Loss: 0.0166 Acc:99.45%
+Training: Epoch[161/190] Iteration[200/391] Loss: 0.0163 Acc:99.48%
+Training: Epoch[161/190] Iteration[250/391] Loss: 0.0169 Acc:99.45%
+Training: Epoch[161/190] Iteration[300/391] Loss: 0.0174 Acc:99.44%
+Training: Epoch[161/190] Iteration[350/391] Loss: 0.0174 Acc:99.43%
+Epoch[161/190] Train Acc: 99.44% Valid Acc:91.87% Train loss:0.0172 Valid loss:0.3903 LR:0.001
+Training: Epoch[162/190] Iteration[050/391] Loss: 0.0188 Acc:99.36%
+Training: Epoch[162/190] Iteration[100/391] Loss: 0.0181 Acc:99.42%
+Training: Epoch[162/190] Iteration[150/391] Loss: 0.0178 Acc:99.41%
+Training: Epoch[162/190] Iteration[200/391] Loss: 0.0178 Acc:99.39%
+Training: Epoch[162/190] Iteration[250/391] Loss: 0.0178 Acc:99.39%
+Training: Epoch[162/190] Iteration[300/391] Loss: 0.0184 Acc:99.38%
+Training: Epoch[162/190] Iteration[350/391] Loss: 0.0179 Acc:99.41%
+Epoch[162/190] Train Acc: 99.40% Valid Acc:91.89% Train loss:0.0179 Valid loss:0.3925 LR:0.001
+Training: Epoch[163/190] Iteration[050/391] Loss: 0.0147 Acc:99.55%
+Training: Epoch[163/190] Iteration[100/391] Loss: 0.0164 Acc:99.41%
+Training: Epoch[163/190] Iteration[150/391] Loss: 0.0174 Acc:99.40%
+Training: Epoch[163/190] Iteration[200/391] Loss: 0.0173 Acc:99.38%
+Training: Epoch[163/190] Iteration[250/391] Loss: 0.0175 Acc:99.38%
+Training: Epoch[163/190] Iteration[300/391] Loss: 0.0179 Acc:99.36%
+Training: Epoch[163/190] Iteration[350/391] Loss: 0.0183 Acc:99.34%
+Epoch[163/190] Train Acc: 99.33% Valid Acc:91.97% Train loss:0.0189 Valid loss:0.3907 LR:0.001
+Training: Epoch[164/190] Iteration[050/391] Loss: 0.0185 Acc:99.44%
+Training: Epoch[164/190] Iteration[100/391] Loss: 0.0196 Acc:99.36%
+Training: Epoch[164/190] Iteration[150/391] Loss: 0.0203 Acc:99.33%
+Training: Epoch[164/190] Iteration[200/391] Loss: 0.0202 Acc:99.31%
+Training: Epoch[164/190] Iteration[250/391] Loss: 0.0206 Acc:99.31%
+Training: Epoch[164/190] Iteration[300/391] Loss: 0.0201 Acc:99.32%
+Training: Epoch[164/190] Iteration[350/391] Loss: 0.0198 Acc:99.33%
+Epoch[164/190] Train Acc: 99.35% Valid Acc:91.99% Train loss:0.0196 Valid loss:0.3866 LR:0.001
+Training: Epoch[165/190] Iteration[050/391] Loss: 0.0183 Acc:99.38%
+Training: Epoch[165/190] Iteration[100/391] Loss: 0.0179 Acc:99.43%
+Training: Epoch[165/190] Iteration[150/391] Loss: 0.0195 Acc:99.33%
+Training: Epoch[165/190] Iteration[200/391] Loss: 0.0201 Acc:99.32%
+Training: Epoch[165/190] Iteration[250/391] Loss: 0.0197 Acc:99.33%
+Training: Epoch[165/190] Iteration[300/391] Loss: 0.0186 Acc:99.36%
+Training: Epoch[165/190] Iteration[350/391] Loss: 0.0191 Acc:99.35%
+Epoch[165/190] Train Acc: 99.36% Valid Acc:91.78% Train loss:0.0188 Valid loss:0.3896 LR:0.001
+Training: Epoch[166/190] Iteration[050/391] Loss: 0.0135 Acc:99.56%
+Training: Epoch[166/190] Iteration[100/391] Loss: 0.0166 Acc:99.45%
+Training: Epoch[166/190] Iteration[150/391] Loss: 0.0175 Acc:99.41%
+Training: Epoch[166/190] Iteration[200/391] Loss: 0.0185 Acc:99.35%
+Training: Epoch[166/190] Iteration[250/391] Loss: 0.0181 Acc:99.38%
+Training: Epoch[166/190] Iteration[300/391] Loss: 0.0181 Acc:99.38%
+Training: Epoch[166/190] Iteration[350/391] Loss: 0.0182 Acc:99.38%
+Epoch[166/190] Train Acc: 99.38% Valid Acc:91.97% Train loss:0.0184 Valid loss:0.3875 LR:0.001
+Training: Epoch[167/190] Iteration[050/391] Loss: 0.0170 Acc:99.41%
+Training: Epoch[167/190] Iteration[100/391] Loss: 0.0183 Acc:99.38%
+Training: Epoch[167/190] Iteration[150/391] Loss: 0.0183 Acc:99.37%
+Training: Epoch[167/190] Iteration[200/391] Loss: 0.0188 Acc:99.37%
+Training: Epoch[167/190] Iteration[250/391] Loss: 0.0187 Acc:99.36%
+Training: Epoch[167/190] Iteration[300/391] Loss: 0.0188 Acc:99.33%
+Training: Epoch[167/190] Iteration[350/391] Loss: 0.0187 Acc:99.34%
+Epoch[167/190] Train Acc: 99.33% Valid Acc:91.87% Train loss:0.0190 Valid loss:0.3900 LR:0.001
+Training: Epoch[168/190] Iteration[050/391] Loss: 0.0180 Acc:99.45%
+Training: Epoch[168/190] Iteration[100/391] Loss: 0.0184 Acc:99.38%
+Training: Epoch[168/190] Iteration[150/391] Loss: 0.0180 Acc:99.41%
+Training: Epoch[168/190] Iteration[200/391] Loss: 0.0180 Acc:99.39%
+Training: Epoch[168/190] Iteration[250/391] Loss: 0.0175 Acc:99.41%
+Training: Epoch[168/190] Iteration[300/391] Loss: 0.0179 Acc:99.40%
+Training: Epoch[168/190] Iteration[350/391] Loss: 0.0183 Acc:99.38%
+Epoch[168/190] Train Acc: 99.39% Valid Acc:91.93% Train loss:0.0182 Valid loss:0.3919 LR:0.001
+Training: Epoch[169/190] Iteration[050/391] Loss: 0.0215 Acc:99.23%
+Training: Epoch[169/190] Iteration[100/391] Loss: 0.0199 Acc:99.30%
+Training: Epoch[169/190] Iteration[150/391] Loss: 0.0182 Acc:99.38%
+Training: Epoch[169/190] Iteration[200/391] Loss: 0.0181 Acc:99.39%
+Training: Epoch[169/190] Iteration[250/391] Loss: 0.0173 Acc:99.42%
+Training: Epoch[169/190] Iteration[300/391] Loss: 0.0170 Acc:99.42%
+Training: Epoch[169/190] Iteration[350/391] Loss: 0.0176 Acc:99.38%
+Epoch[169/190] Train Acc: 99.39% Valid Acc:91.91% Train loss:0.0172 Valid loss:0.3948 LR:0.001
+Training: Epoch[170/190] Iteration[050/391] Loss: 0.0164 Acc:99.34%
+Training: Epoch[170/190] Iteration[100/391] Loss: 0.0184 Acc:99.29%
+Training: Epoch[170/190] Iteration[150/391] Loss: 0.0188 Acc:99.32%
+Training: Epoch[170/190] Iteration[200/391] Loss: 0.0184 Acc:99.36%
+Training: Epoch[170/190] Iteration[250/391] Loss: 0.0184 Acc:99.36%
+Training: Epoch[170/190] Iteration[300/391] Loss: 0.0186 Acc:99.36%
+Training: Epoch[170/190] Iteration[350/391] Loss: 0.0181 Acc:99.39%
+Epoch[170/190] Train Acc: 99.40% Valid Acc:91.96% Train loss:0.0181 Valid loss:0.3968 LR:0.001
+Training: Epoch[171/190] Iteration[050/391] Loss: 0.0185 Acc:99.39%
+Training: Epoch[171/190] Iteration[100/391] Loss: 0.0192 Acc:99.35%
+Training: Epoch[171/190] Iteration[150/391] Loss: 0.0190 Acc:99.36%
+Training: Epoch[171/190] Iteration[200/391] Loss: 0.0180 Acc:99.39%
+Training: Epoch[171/190] Iteration[250/391] Loss: 0.0174 Acc:99.42%
+Training: Epoch[171/190] Iteration[300/391] Loss: 0.0172 Acc:99.45%
+Training: Epoch[171/190] Iteration[350/391] Loss: 0.0175 Acc:99.43%
+Epoch[171/190] Train Acc: 99.43% Valid Acc:91.92% Train loss:0.0175 Valid loss:0.3951 LR:0.001
+Training: Epoch[172/190] Iteration[050/391] Loss: 0.0202 Acc:99.25%
+Training: Epoch[172/190] Iteration[100/391] Loss: 0.0204 Acc:99.24%
+Training: Epoch[172/190] Iteration[150/391] Loss: 0.0201 Acc:99.27%
+Training: Epoch[172/190] Iteration[200/391] Loss: 0.0193 Acc:99.31%
+Training: Epoch[172/190] Iteration[250/391] Loss: 0.0190 Acc:99.32%
+Training: Epoch[172/190] Iteration[300/391] Loss: 0.0189 Acc:99.34%
+Training: Epoch[172/190] Iteration[350/391] Loss: 0.0190 Acc:99.34%
+Epoch[172/190] Train Acc: 99.35% Valid Acc:91.87% Train loss:0.0190 Valid loss:0.3920 LR:0.001
+Training: Epoch[173/190] Iteration[050/391] Loss: 0.0167 Acc:99.41%
+Training: Epoch[173/190] Iteration[100/391] Loss: 0.0168 Acc:99.39%
+Training: Epoch[173/190] Iteration[150/391] Loss: 0.0180 Acc:99.35%
+Training: Epoch[173/190] Iteration[200/391] Loss: 0.0181 Acc:99.36%
+Training: Epoch[173/190] Iteration[250/391] Loss: 0.0173 Acc:99.39%
+Training: Epoch[173/190] Iteration[300/391] Loss: 0.0166 Acc:99.41%
+Training: Epoch[173/190] Iteration[350/391] Loss: 0.0166 Acc:99.42%
+Epoch[173/190] Train Acc: 99.41% Valid Acc:91.99% Train loss:0.0170 Valid loss:0.3896 LR:0.001
+Training: Epoch[174/190] Iteration[050/391] Loss: 0.0166 Acc:99.39%
+Training: Epoch[174/190] Iteration[100/391] Loss: 0.0160 Acc:99.41%
+Training: Epoch[174/190] Iteration[150/391] Loss: 0.0163 Acc:99.44%
+Training: Epoch[174/190] Iteration[200/391] Loss: 0.0170 Acc:99.44%
+Training: Epoch[174/190] Iteration[250/391] Loss: 0.0175 Acc:99.42%
+Training: Epoch[174/190] Iteration[300/391] Loss: 0.0176 Acc:99.39%
+Training: Epoch[174/190] Iteration[350/391] Loss: 0.0176 Acc:99.39%
+Epoch[174/190] Train Acc: 99.38% Valid Acc:91.95% Train loss:0.0174 Valid loss:0.3912 LR:0.001
+Training: Epoch[175/190] Iteration[050/391] Loss: 0.0151 Acc:99.50%
+Training: Epoch[175/190] Iteration[100/391] Loss: 0.0139 Acc:99.58%
+Training: Epoch[175/190] Iteration[150/391] Loss: 0.0153 Acc:99.52%
+Training: Epoch[175/190] Iteration[200/391] Loss: 0.0153 Acc:99.49%
+Training: Epoch[175/190] Iteration[250/391] Loss: 0.0145 Acc:99.51%
+Training: Epoch[175/190] Iteration[300/391] Loss: 0.0144 Acc:99.52%
+Training: Epoch[175/190] Iteration[350/391] Loss: 0.0153 Acc:99.47%
+Epoch[175/190] Train Acc: 99.46% Valid Acc:91.89% Train loss:0.0155 Valid loss:0.3949 LR:0.001
+Training: Epoch[176/190] Iteration[050/391] Loss: 0.0155 Acc:99.53%
+Training: Epoch[176/190] Iteration[100/391] Loss: 0.0145 Acc:99.58%
+Training: Epoch[176/190] Iteration[150/391] Loss: 0.0160 Acc:99.47%
+Training: Epoch[176/190] Iteration[200/391] Loss: 0.0162 Acc:99.44%
+Training: Epoch[176/190] Iteration[250/391] Loss: 0.0169 Acc:99.40%
+Training: Epoch[176/190] Iteration[300/391] Loss: 0.0173 Acc:99.39%
+Training: Epoch[176/190] Iteration[350/391] Loss: 0.0170 Acc:99.41%
+Epoch[176/190] Train Acc: 99.42% Valid Acc:91.90% Train loss:0.0168 Valid loss:0.3933 LR:0.001
+Training: Epoch[177/190] Iteration[050/391] Loss: 0.0178 Acc:99.41%
+Training: Epoch[177/190] Iteration[100/391] Loss: 0.0160 Acc:99.41%
+Training: Epoch[177/190] Iteration[150/391] Loss: 0.0165 Acc:99.42%
+Training: Epoch[177/190] Iteration[200/391] Loss: 0.0160 Acc:99.45%
+Training: Epoch[177/190] Iteration[250/391] Loss: 0.0167 Acc:99.44%
+Training: Epoch[177/190] Iteration[300/391] Loss: 0.0168 Acc:99.43%
+Training: Epoch[177/190] Iteration[350/391] Loss: 0.0170 Acc:99.44%
+Epoch[177/190] Train Acc: 99.43% Valid Acc:91.88% Train loss:0.0172 Valid loss:0.3988 LR:0.001
+Training: Epoch[178/190] Iteration[050/391] Loss: 0.0171 Acc:99.45%
+Training: Epoch[178/190] Iteration[100/391] Loss: 0.0179 Acc:99.41%
+Training: Epoch[178/190] Iteration[150/391] Loss: 0.0180 Acc:99.40%
+Training: Epoch[178/190] Iteration[200/391] Loss: 0.0176 Acc:99.39%
+Training: Epoch[178/190] Iteration[250/391] Loss: 0.0182 Acc:99.35%
+Training: Epoch[178/190] Iteration[300/391] Loss: 0.0182 Acc:99.35%
+Training: Epoch[178/190] Iteration[350/391] Loss: 0.0176 Acc:99.36%
+Epoch[178/190] Train Acc: 99.38% Valid Acc:91.84% Train loss:0.0173 Valid loss:0.3988 LR:0.001
+Training: Epoch[179/190] Iteration[050/391] Loss: 0.0199 Acc:99.39%
+Training: Epoch[179/190] Iteration[100/391] Loss: 0.0181 Acc:99.38%
+Training: Epoch[179/190] Iteration[150/391] Loss: 0.0176 Acc:99.40%
+Training: Epoch[179/190] Iteration[200/391] Loss: 0.0172 Acc:99.41%
+Training: Epoch[179/190] Iteration[250/391] Loss: 0.0163 Acc:99.44%
+Training: Epoch[179/190] Iteration[300/391] Loss: 0.0169 Acc:99.41%
+Training: Epoch[179/190] Iteration[350/391] Loss: 0.0169 Acc:99.42%
+Epoch[179/190] Train Acc: 99.43% Valid Acc:91.77% Train loss:0.0167 Valid loss:0.3963 LR:0.001
+Training: Epoch[180/190] Iteration[050/391] Loss: 0.0159 Acc:99.55%
+Training: Epoch[180/190] Iteration[100/391] Loss: 0.0159 Acc:99.45%
+Training: Epoch[180/190] Iteration[150/391] Loss: 0.0159 Acc:99.45%
+Training: Epoch[180/190] Iteration[200/391] Loss: 0.0165 Acc:99.43%
+Training: Epoch[180/190] Iteration[250/391] Loss: 0.0165 Acc:99.44%
+Training: Epoch[180/190] Iteration[300/391] Loss: 0.0172 Acc:99.41%
+Training: Epoch[180/190] Iteration[350/391] Loss: 0.0166 Acc:99.43%
+Epoch[180/190] Train Acc: 99.43% Valid Acc:91.90% Train loss:0.0165 Valid loss:0.3962 LR:0.001
+Training: Epoch[181/190] Iteration[050/391] Loss: 0.0164 Acc:99.44%
+Training: Epoch[181/190] Iteration[100/391] Loss: 0.0146 Acc:99.55%
+Training: Epoch[181/190] Iteration[150/391] Loss: 0.0153 Acc:99.54%
+Training: Epoch[181/190] Iteration[200/391] Loss: 0.0150 Acc:99.53%
+Training: Epoch[181/190] Iteration[250/391] Loss: 0.0150 Acc:99.53%
+Training: Epoch[181/190] Iteration[300/391] Loss: 0.0148 Acc:99.53%
+Training: Epoch[181/190] Iteration[350/391] Loss: 0.0152 Acc:99.52%
+Epoch[181/190] Train Acc: 99.51% Valid Acc:91.78% Train loss:0.0158 Valid loss:0.3999 LR:0.001
+Training: Epoch[182/190] Iteration[050/391] Loss: 0.0140 Acc:99.61%
+Training: Epoch[182/190] Iteration[100/391] Loss: 0.0158 Acc:99.52%
+Training: Epoch[182/190] Iteration[150/391] Loss: 0.0166 Acc:99.48%
+Training: Epoch[182/190] Iteration[200/391] Loss: 0.0169 Acc:99.45%
+Training: Epoch[182/190] Iteration[250/391] Loss: 0.0169 Acc:99.45%
+Training: Epoch[182/190] Iteration[300/391] Loss: 0.0171 Acc:99.43%
+Training: Epoch[182/190] Iteration[350/391] Loss: 0.0168 Acc:99.44%
+Epoch[182/190] Train Acc: 99.46% Valid Acc:91.88% Train loss:0.0163 Valid loss:0.3987 LR:0.001
+Training: Epoch[183/190] Iteration[050/391] Loss: 0.0144 Acc:99.56%
+Training: Epoch[183/190] Iteration[100/391] Loss: 0.0155 Acc:99.47%
+Training: Epoch[183/190] Iteration[150/391] Loss: 0.0154 Acc:99.46%
+Training: Epoch[183/190] Iteration[200/391] Loss: 0.0158 Acc:99.46%
+Training: Epoch[183/190] Iteration[250/391] Loss: 0.0165 Acc:99.43%
+Training: Epoch[183/190] Iteration[300/391] Loss: 0.0159 Acc:99.47%
+Training: Epoch[183/190] Iteration[350/391] Loss: 0.0154 Acc:99.50%
+Epoch[183/190] Train Acc: 99.49% Valid Acc:91.67% Train loss:0.0156 Valid loss:0.3994 LR:0.001
+Training: Epoch[184/190] Iteration[050/391] Loss: 0.0147 Acc:99.42%
+Training: Epoch[184/190] Iteration[100/391] Loss: 0.0138 Acc:99.52%
+Training: Epoch[184/190] Iteration[150/391] Loss: 0.0143 Acc:99.49%
+Training: Epoch[184/190] Iteration[200/391] Loss: 0.0160 Acc:99.44%
+Training: Epoch[184/190] Iteration[250/391] Loss: 0.0158 Acc:99.45%
+Training: Epoch[184/190] Iteration[300/391] Loss: 0.0154 Acc:99.46%
+Training: Epoch[184/190] Iteration[350/391] Loss: 0.0156 Acc:99.46%
+Epoch[184/190] Train Acc: 99.46% Valid Acc:91.84% Train loss:0.0158 Valid loss:0.4004 LR:0.001
+Training: Epoch[185/190] Iteration[050/391] Loss: 0.0138 Acc:99.56%
+Training: Epoch[185/190] Iteration[100/391] Loss: 0.0142 Acc:99.55%
+Training: Epoch[185/190] Iteration[150/391] Loss: 0.0143 Acc:99.58%
+Training: Epoch[185/190] Iteration[200/391] Loss: 0.0142 Acc:99.55%
+Training: Epoch[185/190] Iteration[250/391] Loss: 0.0146 Acc:99.51%
+Training: Epoch[185/190] Iteration[300/391] Loss: 0.0148 Acc:99.51%
+Training: Epoch[185/190] Iteration[350/391] Loss: 0.0149 Acc:99.51%
+Epoch[185/190] Train Acc: 99.50% Valid Acc:91.88% Train loss:0.0152 Valid loss:0.4026 LR:0.001
+Training: Epoch[186/190] Iteration[050/391] Loss: 0.0205 Acc:99.28%
+Training: Epoch[186/190] Iteration[100/391] Loss: 0.0174 Acc:99.43%
+Training: Epoch[186/190] Iteration[150/391] Loss: 0.0175 Acc:99.43%
+Training: Epoch[186/190] Iteration[200/391] Loss: 0.0161 Acc:99.46%
+Training: Epoch[186/190] Iteration[250/391] Loss: 0.0161 Acc:99.47%
+Training: Epoch[186/190] Iteration[300/391] Loss: 0.0162 Acc:99.47%
+Training: Epoch[186/190] Iteration[350/391] Loss: 0.0165 Acc:99.47%
+Epoch[186/190] Train Acc: 99.48% Valid Acc:91.90% Train loss:0.0161 Valid loss:0.4009 LR:0.001
+Training: Epoch[187/190] Iteration[050/391] Loss: 0.0127 Acc:99.55%
+Training: Epoch[187/190] Iteration[100/391] Loss: 0.0137 Acc:99.49%
+Training: Epoch[187/190] Iteration[150/391] Loss: 0.0140 Acc:99.48%
+Training: Epoch[187/190] Iteration[200/391] Loss: 0.0150 Acc:99.44%
+Training: Epoch[187/190] Iteration[250/391] Loss: 0.0152 Acc:99.43%
+Training: Epoch[187/190] Iteration[300/391] Loss: 0.0154 Acc:99.43%
+Training: Epoch[187/190] Iteration[350/391] Loss: 0.0151 Acc:99.45%
+Epoch[187/190] Train Acc: 99.44% Valid Acc:91.82% Train loss:0.0155 Valid loss:0.4006 LR:0.001
+Training: Epoch[188/190] Iteration[050/391] Loss: 0.0143 Acc:99.47%
+Training: Epoch[188/190] Iteration[100/391] Loss: 0.0167 Acc:99.41%
+Training: Epoch[188/190] Iteration[150/391] Loss: 0.0156 Acc:99.47%
+Training: Epoch[188/190] Iteration[200/391] Loss: 0.0150 Acc:99.48%
+Training: Epoch[188/190] Iteration[250/391] Loss: 0.0153 Acc:99.48%
+Training: Epoch[188/190] Iteration[300/391] Loss: 0.0155 Acc:99.47%
+Training: Epoch[188/190] Iteration[350/391] Loss: 0.0154 Acc:99.47%
+Epoch[188/190] Train Acc: 99.47% Valid Acc:91.95% Train loss:0.0156 Valid loss:0.4022 LR:0.001
+Training: Epoch[189/190] Iteration[050/391] Loss: 0.0180 Acc:99.33%
+Training: Epoch[189/190] Iteration[100/391] Loss: 0.0150 Acc:99.44%
+Training: Epoch[189/190] Iteration[150/391] Loss: 0.0146 Acc:99.48%
+Training: Epoch[189/190] Iteration[200/391] Loss: 0.0143 Acc:99.51%
+Training: Epoch[189/190] Iteration[250/391] Loss: 0.0146 Acc:99.50%
+Training: Epoch[189/190] Iteration[300/391] Loss: 0.0151 Acc:99.48%
+Training: Epoch[189/190] Iteration[350/391] Loss: 0.0154 Acc:99.45%
+Epoch[189/190] Train Acc: 99.46% Valid Acc:91.77% Train loss:0.0151 Valid loss:0.4036 LR:0.001
+Training: Epoch[190/190] Iteration[050/391] Loss: 0.0128 Acc:99.55%
+Training: Epoch[190/190] Iteration[100/391] Loss: 0.0163 Acc:99.38%
+Training: Epoch[190/190] Iteration[150/391] Loss: 0.0165 Acc:99.41%
+Training: Epoch[190/190] Iteration[200/391] Loss: 0.0161 Acc:99.44%
+Training: Epoch[190/190] Iteration[250/391] Loss: 0.0159 Acc:99.44%
+Training: Epoch[190/190] Iteration[300/391] Loss: 0.0156 Acc:99.46%
+Training: Epoch[190/190] Iteration[350/391] Loss: 0.0157 Acc:99.45%
+Epoch[190/190] Train Acc: 99.45% Valid Acc:91.76% Train loss:0.0157 Valid loss:0.4044 LR:0.001
+class:plane     , total num:5000.0, correct num:4982.0  Recall: 99.64% Precision: 99.68%
+class:car       , total num:5000.0, correct num:4990.0  Recall: 99.80% Precision: 99.68%
+class:bird      , total num:5000.0, correct num:4972.0  Recall: 99.44% Precision: 99.30%
+class:cat       , total num:5000.0, correct num:4927.0  Recall: 98.54% Precision: 98.70%
+class:deer      , total num:5000.0, correct num:4978.0  Recall: 99.56% Precision: 99.54%
+class:dog       , total num:5000.0, correct num:4952.0  Recall: 99.04% Precision: 98.96%
+class:frog      , total num:5000.0, correct num:4973.0  Recall: 99.46% Precision: 99.62%
+class:horse     , total num:5000.0, correct num:4980.0  Recall: 99.60% Precision: 99.60%
+class:ship      , total num:5000.0, correct num:4987.0  Recall: 99.74% Precision: 99.72%
+class:truck     , total num:5000.0, correct num:4983.0  Recall: 99.66% Precision: 99.68%
+class:plane     , total num:1000.0, correct num:938.0  Recall: 93.79% Precision: 91.15%
+class:car       , total num:1000.0, correct num:961.0  Recall: 96.09% Precision: 96.38%
+class:bird      , total num:1000.0, correct num:888.0  Recall: 88.79% Precision: 91.25%
+class:cat       , total num:1000.0, correct num:821.0  Recall: 82.09% Precision: 83.43%
+class:deer      , total num:1000.0, correct num:920.0  Recall: 91.99% Precision: 91.26%
+class:dog       , total num:1000.0, correct num:864.0  Recall: 86.39% Precision: 85.79%
+class:frog      , total num:1000.0, correct num:946.0  Recall: 94.59% Precision: 92.55%
+class:horse     , total num:1000.0, correct num:935.0  Recall: 93.49% Precision: 95.30%
+class:ship      , total num:1000.0, correct num:945.0  Recall: 94.49% Precision: 95.44%
+class:truck     , total num:1000.0, correct num:958.0  Recall: 95.79% Precision: 94.94%
+ done ~~~~ 03-24_13-54, best acc: 0.9199 in :163
