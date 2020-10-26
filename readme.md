@@ -46,10 +46,6 @@ http://www.cs.toronto.edu/~kriz/cifar.html 下载python版，得到cifar-10-pyth
 |vgg-16 |93.5% |93.6%|
 |ghost-vgg-16|92.0% | 93.7%|
 
-## 预训练模型
-[ghost-resnet-56 and resnet-56](https://pan.baidu.com/s/10e7CWdHxC18-0pwIr-vXHQ) 密码:uz6f   
-
-[ghost-vgg-16 and vgg-16](https://pan.baidu.com/s/1pnc_Ir5ZwGeSpn9AAx6eZQ) 密码:n82n
 
 ## 参数计算
 执行 python bin/03\_compute\_flops.py  
